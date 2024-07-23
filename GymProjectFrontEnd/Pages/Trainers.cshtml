@@ -1,0 +1,1232 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.TrainersModel
+@{
+}
+
+<head>
+    <link rel="preload" href="./css/Schedule.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css/Schedule.css" asp-append-version="true" />
+    <link rel="preload" href="./css/Trainers.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css//Trainers.css" asp-append-version="true" />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="headerContainer" id="headerContainer">
+            <div class="navegation-container">
+                <nav class="navigation">
+                    <ul>
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/Schedule">Clases</a></li>
+                        <li><a asp-page="/Trainers">Nuestros Entrenadores</a></li>
+                        <li class="dropdown-nav-menu">
+                            <a href="#" class="dropbtn">Menu</a>
+                            <div class="dropdown-content-nav">
+                                <a asp-page="/ScheduleConfiguration">Gestión de Horarios</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/RoutineManagement">Gestión de Rutinas</a>
+                                <a asp-page="/AppointmentManagement">Gestión de Citas</a>
+                                <a asp-page="/EmployeeManagement">Gestión de Empleados</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/Logout">Cerrar sesión</a>
+                                <a asp-page="/DiscountManagement">Gestión de descuentos</a>
+                                <a asp-page="/CouponManagement">Gestión de cupones</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a asp-page="/Login">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <defs>
+                                        <linearGradient id="heading-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="5%" style="stop-color:#AE8625;stop-opacity:1" />
+                                            <stop offset="45%" style="stop-color:#F7EF8A;stop-opacity:1" />
+                                            <stop offset="85%" style="stop-color:#D2AC47;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" stroke="url(#heading-gradient)" />
+                                    <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="url(#heading-gradient)" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" stroke="url(#heading-gradient)" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <H1>Nuestros Entrenadores</H1>
+            <p>Conoce a nuestro experimentado equipo de entrenadores del gimnasio, <br> estamos para ayudarte a alcanzar tus objetivos de fitness.</p>
+    </header> 
+
+    <section class="trainer-section">
+        <div class="trainer-container">
+            <div class="trainer-info">
+                <div class="trainer-text">
+                    <h4>María Gómez</h4>
+                    <p>María es una entrenadora certificada con 8 años de experiencia. <br>Se especializa en yoga y entrenamiento de alta intensidad, 
+                        brindando <br> a sus clientes un enfoque holístico para mejorar su bienestar físico y mental.</p>
+                        <h4>Horario</h4>
+                        <p>.Martes: 6am - 10am
+                            <br>
+                            <br>
+                            Jueves: 4pm - 8pm
+                            <br>
+                            <br>
+                            Domingo: 10am - 2pm
+                            <br>
+                            <br>
+                            Domingo: 10am - 2pm
+                            <br>
+                            <br>
+                            Domingo: 10am - 2pm</p>
+                        <h4>Servicios</h4>
+                        
+                        <p>
+                        Sesiones de entrenamiento personal
+                        <br>
+                        Clases de yoga y meditación
+                        <br>
+                        Asesoramiento integral de estilos de vida saludables
+                        </p>
+                        <h4>Tarifa</h4>
+                        <p> 15$/h</p>
+                        <div class="ButtonContainer trainer-button-container">
+                            <div class="CheckSchedule trainer-button" id="trainer-button-#"> 
+                                <button class="check-trainer-schedule" data-trainer-id="1">Reservar ahora</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="trainer-image"></div>
+            </div>
+
+            <div class="Schedule Container popup " id="trainer-1">
+                <div class="dropdown-title-container">
+                    <h2>Espacios disponibles</h2>
+                    <button class="close-button" onclick="closePopup('trainer-1')">&times;</button>
+                    <div class="dropdown-container">
+                        <h3 class="week-filter">Buscar semana:</h3>
+                        <div class="dropdown">
+                            <input type="text" id="searchBox" class="styled-input" placeholder="Semana X" onclick="toggleDropdown()">
+                            <button class="dropdown-button" onclick="toggleDropdown()">Semana X</button>
+                            <div id="dropdown-content" class="dropdown-content">
+                                <!-- Opciones de semanas se añadirán aquí desde JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hora</th>
+                                <th>Lunes</th>
+                                <th>Martes</th>
+                                <th>Miércoles</th>
+                                <th>Jueves</th>
+                                <th>Viernes</th>
+                                <th>Sábado</th>
+                                <th>Domingo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="first-td">6:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-1">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-2">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-3">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-4">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-5">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-6">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-7">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">7:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-8">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-9">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-10">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-11">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-12">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-13">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-14">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">8:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">9:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-22">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-23">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-24">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-25">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-26">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-27">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-28">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">10:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">11:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-22">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-23">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-24">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-25">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-26">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-27">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-28">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">12:00 pm</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">02:00 pm</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-22">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-23">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-24">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-25">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-26">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-27">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-28">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">12:00 pm</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>                                              
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+ <!---------------------------------------------------------------------------- nextTrainer ------------------------------------------------------------------------------------>
+
+    <section class="trainer-section next-trainer">
+        <div class="trainer-container">
+            <div class="trainer-info">
+                <div class="trainer-text">
+                    <h4>María Gómez</h4>
+                    <p>María es una entrenadora certificada con 8 años de experiencia. <br>Se especializa en yoga y entrenamiento de alta intensidad, 
+                        brindando <br> a sus clientes un enfoque holístico para mejorar su bienestar físico y mental.</p>
+                        <h4>Horario</h4>
+                        <p>.Martes: 6am - 10am
+                            <br>
+                            <br>
+                            Jueves: 4pm - 8pm
+                            <br>
+                            <br>
+                            Domingo: 10am - 2pm
+                            <br>
+                            <br>
+                            Domingo: 10am - 2pm
+                            <br>
+                            <br>
+                            Domingo: 10am - 2pm</p>
+                        <h4>Servicios</h4>
+                        
+                        <p>
+                        Sesiones de entrenamiento personal
+                        <br>
+                        Clases de yoga y meditación
+                        <br>
+                        Asesoramiento integral de estilos de vida saludables
+                        </p>
+                        <h4>Tarifa</h4>
+                        <p> 15$/h</p>
+                        <div class="ButtonContainer trainer-button-container">
+                            <div class="CheckSchedule trainer-button" id="trainer-button-#"> 
+                                <button class="check-trainer-schedule" data-trainer-id="2">Reservar ahora</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="trainer-image"></div>
+            </div>
+
+            <div class="Schedule Container popup " id="trainer-2">
+                <div class="dropdown-title-container">
+                    <h2>Espacios disponibles</h2>
+                    <button class="close-button" onclick="closePopup('trainer-2')">&times;</button>
+                    <div class="dropdown-container">
+                        <h3 class="week-filter">Buscar semana:</h3>
+                        <div class="dropdown">
+                            <input type="text" id="searchBox" class="styled-input" placeholder="Semana X" onclick="toggleDropdown()">
+                            <button class="dropdown-button" onclick="toggleDropdown()">Semana X</button>
+                            <div id="dropdown-content" class="dropdown-content">
+                                <!-- Opciones de semanas se añadirán aquí desde JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hora</th>
+                                <th>Lunes</th>
+                                <th>Martes</th>
+                                <th>Miércoles</th>
+                                <th>Jueves</th>
+                                <th>Viernes</th>
+                                <th>Sábado</th>
+                                <th>Domingo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="first-td">6:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-1">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-2">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-3">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-4">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-5">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-6">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-7">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">7:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-8">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-9">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-10">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-11">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-12">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-13">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-14">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">8:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">9:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-22">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-23">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-24">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-25">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-26">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-27">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-28">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">10:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">11:00 am</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-22">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-23">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-24">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-25">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-26">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-27">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-28">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">12:00 pm</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="second-tr">
+                                <td class="first-td">02:00 pm</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-22">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-23">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-24">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-25">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-26">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-27">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-28">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">12:00 pm</td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-15">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-16">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-17">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-18">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-19">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-container">
+                                        No disponible
+                                        <div class="reservation-button" id="Reservation-20">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="last-td">
+                                    <div class="td-container">
+                                        <div class="reservation-button" id="Reservation-21">
+                                            <button class="reserved">Reservar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>                                              
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section contact">
+        <h2>Contáctanos</h2>
+        <P>¡Estamos aquí para ayudarte a cumplir tus metas! No dudes en ponerte en contacto con nosotros. <br>
+            <br>
+            Teléfono: 555-1234 <br> 
+            Correo electrónico: info@gymelite.com <br>
+            Dirección: Calle Principal 123, Ciudad X
+        </P>
+        <p> Síguenos en nuestras redes sociales: <p class="pGold">Instagram | Facebook | Twitter </p></p>
+    
+    </section>
+
+    <footer>
+
+    </footer>
+    
+    <script src="./js/Trainers.js" asp-append-version="true"></script>
+    <script src="./js/Schedule.js" asp-append-version="true"></script>
+</body>

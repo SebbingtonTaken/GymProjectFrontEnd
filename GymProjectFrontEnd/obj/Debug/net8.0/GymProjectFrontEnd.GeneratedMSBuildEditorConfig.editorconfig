@@ -1,0 +1,67 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = GymProjectFrontEnd
+build_property.RootNamespace = GymProjectFrontEnd
+build_property.ProjectDir = C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/AccountInformation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudEluZm9ybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/EmployeeManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/Payments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/Schedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NoZWR1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/ScheduleConfiguration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NoZWR1bGVDb25maWd1cmF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/Trainers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaW5lcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barah/OneDrive/Desktop/GymProjectFrontEnd/GymProjectFrontEnd/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-4d7o6hd9cx

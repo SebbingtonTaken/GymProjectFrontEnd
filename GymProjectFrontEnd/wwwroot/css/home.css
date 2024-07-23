@@ -1,0 +1,309 @@
+
+
+header {
+    background-image: 
+    linear-gradient(var(--imageBackground), var(--imageBackground)), 
+    url('../Images/mainImage.jpg');
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+
+.headerContainer {
+    width: 45%;
+    height: 100%;
+}
+
+.loginButtonContainer{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 39%;
+    gap: 15px;
+}
+
+.login {
+    background: var(--black);
+    width: 40%;
+    height: 28%;
+    border-radius: 6px ;
+    border: 3px solid var(--secondaryGolden);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login button {
+    border: none;
+    background: none; 
+    padding: 0; 
+    font-size: 23px;
+    font-weight: 200;
+    color: var(--primaryGolden);
+}
+
+.createAccount {
+    background: var(--heading-gradient);
+    width: 40%;
+    height: 28%;
+    border-radius: 6px ;
+    border: 2px solid var(--primaryGolden);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.createAccount p {
+    color: var(--black);
+}
+
+button {
+    border: none;
+    background: none; 
+    padding: 0; 
+    color: var(--black);
+    font-size: 23px;
+    font-weight: 200;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Fee section */
+
+.section {
+    display: grid;
+    place-items:center;
+    width: 100%;
+    height: 70%;
+    background-color: var(--secondaryGolden);
+
+}
+
+.feeSection {
+    background-color: var(--secondaryGolden);
+}
+
+.container {
+    width: 60%;
+    height: 60%;
+    background-color: var(--black);
+    border-radius: 6px ;
+}
+
+.feeContainer h2 , .coachContainer h2 , .locationContainer h2 , .locationContainer p , .container h2{
+    margin-left: 70px;
+}
+
+.memberShipContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-left: 70px;
+}
+
+.memberShipContainer h3 p , .coachContainer h3 p, .servicesContainer h3 p {
+    color: var(--scheduleBackground); 
+    font-size: 20px;
+    background: none;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color:var(--secondaryBackgroundImage);
+    margin-right: 20px;
+  
+}
+
+/* Coach section */
+.coachSection {
+background: var(--black);
+height: 70%;
+}
+
+.coachInfoContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.coachData img {
+    width: 200px;
+    height: 67%;
+    border-radius: 11px;
+    
+}
+
+.coachData {
+    margin-left: 80px;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Location section */
+
+.locationContainer {
+    width: 50%;
+}
+
+.locationButton {
+    background: var(--heading-gradient);
+    width: 25%;
+    height: 14%;
+    border-radius: 6px ;
+    border: 2px solid var(--primaryGolden);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 75px;
+    font-weight: 500px;
+}
+
+/* Service section */
+.servicesSection {
+    background: var(--black);
+}
+
+.numbers {
+    width: 34px;
+    height: 41px;
+    background: var(--numberBackGround);
+    text-align: center;
+    font-size: 35px;
+    color: var(--scheduleLines);
+    border-radius: 6px;
+}
+
+.servicesContainer {
+    display: flex;
+    flex-wrap: inherit;
+    justify-content: space-around;
+    width: 100%;
+    
+}
+
+.serviceContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/*Schedule */
+
+.scheduleSection {
+    background-image: 
+    linear-gradient(var(--imageBackground), var(--scheduleBackground)), 
+    url('../Images/backGroundImage.png');
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 90px;
+}
+
+
+.scheduleSection h2 {
+    margin-right: 20%;
+}
+
+.scheduleContainer {
+    background-color: transparent;
+    border-radius: 6px ;
+    border: 3px solid var(--primaryGolden);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.dayContainer p {
+    color: var(--black);
+    text-align: justify;
+}
+
+.dayContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkScheduleContainer{
+    width: 40%;
+    height: fit-content;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.scheduleButtonContainer {
+    align-items: center;
+    background-color: var(--classScheduleBackground);
+    border-radius: 6px;
+    width: 65%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    height: 3rem;
+}
+
+.scheduleButton {
+    color: var(--white);
+    font-size: 20px;
+}
+
+.secondContainer {
+    background-color: var(--scheduleSecondContainer);
+    margin-left: 5.1px;
+
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+td {
+    border-bottom: 3px solid var(--scheduleLines);
+    padding: 10px;
+    text-align: center;
+}
+
+td p {
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody {
+    border-color: var(--ThirdGolden);
+    justify-content: left;
+}
+
+
+
+.pGold {
+    color: var(--scheduleLines);
+}
+
+.contact {
+    background-color: var(--black);
+    height: fit-content;
+
+}

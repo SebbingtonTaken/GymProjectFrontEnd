@@ -1,0 +1,60 @@
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\appsettings.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.staticwebassets.runtime.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.exe
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.deps.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.runtimeconfig.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.dll
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.pdb
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.AssemblyInfoInputs.cache
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.AssemblyInfo.cs
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.RazorAssemblyInfo.cache
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.RazorAssemblyInfo.cs
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.GymProjectFrontEnd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.build.GymProjectFrontEnd.props
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.GymProjectFrontEnd.props
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.GymProjectFrontEnd.props
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\scopedcss\bundle\GymProjectFrontEnd.styles.css
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\scopedcss\projectbundle\GymProjectFrontEnd.bundle.scp.css
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.dll
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\refint\GymProjectFrontEnd.dll
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.pdb
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.genruntimeconfig.cache
+C:\Users\basti\Desktop\Cenfotec\Proyecto 2\2024\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\ref\GymProjectFrontEnd.dll
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\appsettings.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.staticwebassets.runtime.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.exe
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.deps.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.runtimeconfig.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.dll
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\bin\Debug\net8.0\GymProjectFrontEnd.pdb
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.AssemblyInfoInputs.cache
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.AssemblyInfo.cs
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.RazorAssemblyInfo.cache
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.RazorAssemblyInfo.cs
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.GymProjectFrontEnd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.build.GymProjectFrontEnd.props
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.GymProjectFrontEnd.props
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.GymProjectFrontEnd.props
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\scopedcss\bundle\GymProjectFrontEnd.styles.css
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\scopedcss\projectbundle\GymProjectFrontEnd.bundle.scp.css
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.dll
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\refint\GymProjectFrontEnd.dll
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.pdb
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.genruntimeconfig.cache
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\ref\GymProjectFrontEnd.dll

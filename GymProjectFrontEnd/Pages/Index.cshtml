@@ -1,0 +1,292 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<body>
+
+    <header>
+        <div class="headerContainer" id="headerContainer">
+            <div class="navigation-container">
+                <nav class="navigation">
+                    <ul>
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/Schedule">Clases</a></li>
+                        <li><a asp-page="/Trainers">Nuestros Entrenadores</a></li>
+                        <li class="dropdown-nav-menu">
+                            <a href="#" class="dropbtn">Menu</a>
+                            <div class="dropdown-content-nav">
+                                <a asp-page="/ScheduleConfiguration">Gestión de Horarios</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/RoutineManagement">Gestión de Rutinas</a>
+                                <a asp-page="/AppointmentManagement">Gestión de Citas</a>
+                                <a asp-page="/EmployeeManagement">Gestión de Empleados</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/Logout">Cerrar sesión</a>
+                                <a asp-page="/DiscountManagement">Gestión de descuentos</a>
+                                <a asp-page="/CouponManagement">Gestión de cupones</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a asp-page="/Login">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <defs>
+                                        <linearGradient id="heading-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="5%" style="stop-color:#AE8625;stop-opacity:1" />
+                                            <stop offset="45%" style="stop-color:#F7EF8A;stop-opacity:1" />
+                                            <stop offset="85%" style="stop-color:#D2AC47;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" stroke="url(#heading-gradient)" />
+                                    <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="url(#heading-gradient)" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" stroke="url(#heading-gradient)" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <H1>Bienvenido a Gym Elite</H1>
+            <p>Entrenamiento de alto nivel en un ambiente acogedor y motivador. ¡Únete a nosotros y alcanza tus metas!</p>
+            <div class="loginButtonContainer">
+                <div class="createAccount" id="createAccount">
+                    <button>Crear cuenta</button>
+                </div>
+                <div class="login" id="login">
+                    <button>Iniciar sesion</button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="feeSection section" id="feeSection">
+        <div class="feeContainer container">
+            <h2>Nuestras Tarifas</h2>
+            <div class="memberShipContainer" id="memberShipContainer">
+                <h3>
+                    Membresía Básica
+                    <p>Acceso al gimnasio durante todo el mes.<br><br>$39/mes</p>
+                </h3>
+
+                <h3>
+                    Membresía Regular
+                    <p>Acceso al gimnasio durante todo el mes y hasta 2 clases grupales  por semana.<br><br>$49/mes</p>
+                </h3>
+
+                <h3>
+                    Membresía Premium
+                    <p>Acceso al gimnasio y clases grupales ilimitadas durante todo el mes. <br><br>$59/mes</p>
+
+                </h3>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="coachSection section" id="coachSection">
+        <div class="coachContainer container">
+            <h2>Nuestros instructores</h2>
+            <div class=" coachInfoContainer" id="coachInfoContainer">
+                <div class="coachData" id="coachData1">
+                    <img src="../Images/femaleCoach.jpg" alt="Coach">
+                    <h3>
+                        Victoria
+                        <p>Entrenadora de fuerza</p>
+                    </h3>
+                </div>
+                <div class="coachData" id="coachData2">
+                    <img src="../Images/crossFitCoach.jpg" alt="Coach">
+                    <h3>
+                        Juan
+                        <p>Instructor de Crossfit</p>
+                    </h3>
+                </div>
+                <div class="coachData" id="coachData3">
+                    <img src="../Images/pilatesCoach.jpg" alt="Coach">
+                    <h3>
+                        Ana
+                        <p>Entrenadora de Spinning</p>
+                    </h3>
+                </div>
+                <div class="coachData" id="coachData4">
+                    <img src="../Images/boxCoach.jpg" alt="Coach">
+                    <h3>
+                        Pedro
+                        <p>Instructor de Boxeo</p>
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section locationSection">
+        <div class="container locationContainer">
+            <h2> Nuestra Ubicación </h2>
+            <p>Estamos ubicados en Pinares Curridabat</p>
+            <div class="locationButton" id="locationButton">
+                <button class="googleMaps">Ver en Google Maps</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section servicesSection">
+        <div>
+            <h2>Nuestras disciplinas</h2>
+            <div class="container servicesContainer">
+                <div class="column">
+                    <div class="serviceContainer">
+                        <p class="numbers"> 1</p>
+                        <h3>
+                            Entrenamiento de Fuerza <br>
+                            <p>Fortalece músculos y mejora la resistencia.</p>
+                        </h3>
+                    </div>
+                    <div class="serviceContainer">
+                        <p class="numbers"> 2</p>
+                        <h3>
+                            Yoga y Pilates <br>
+                            <p>Mejora la flexibilidad, equilibrio y postura.</p>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="serviceContainer">
+                        <p class="numbers"> 3</p>
+                        <h3>
+                            Crossfit <br>
+                            <p>Mejora tu fuerza y resistencia fisica</p>
+                        </h3>
+                    </div>
+                    <div class="serviceContainer">
+                        <p class="numbers"> 4</p>
+                        <h3>
+                            Boxeo <br>
+                            <p>Mejora resistencia fisica y aprende a defenderte</p>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section scheduleSection">
+        <h2>Nuestros Horarios</h2>
+        <div class=" container scheduleContainer">
+            <table>
+                <tr>
+                    <td class="dayContainer">
+                        <p>Lunes</p>
+                        <div class="checkScheduleContainer">
+                            <p>6 pm - 10 pm</p>
+                            <div class="scheduleButtonContainer">
+                                <button class="scheduleButton">
+                                    Ver horario de clases
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dayContainer secondContainer">
+                        <p>Martes</p>
+                        <div class="checkScheduleContainer">
+                            <p>6 pm - 10 pm</p>
+                            <div class="scheduleButtonContainer">
+                                <button class="scheduleButton">
+                                    Ver horario de clases
+                                </button>
+                            </div>
+                        </div>
+                </tr>
+                <tr>
+                    <td class="dayContainer">
+                        <p>Miércoles</p>
+                        <div class="checkScheduleContainer">
+                            <p>6 pm - 10 pm</p>
+                            <div class="scheduleButtonContainer">
+                                <button class="scheduleButton">
+                                    Ver horario de clases
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class=" dayContainer secondContainer">
+                        <p>Jueves</p>
+                        <div class="checkScheduleContainer">
+                            <p>6 pm - 10 pm</p>
+                            <div class="scheduleButtonContainer">
+                                <button class="scheduleButton">
+                                    Ver horario de clases
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dayContainer">
+                        <p>Viernes</p>
+                        <div class="checkScheduleContainer">
+                            <p>6 pm - 10 pm</p>
+                            <div class="scheduleButtonContainer">
+                                <button class="scheduleButton">
+                                    Ver horario de clases
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class=" dayContainer secondContainer">
+                        <p>Sábado</p>
+                        <div class="checkScheduleContainer">
+                            <p>8:00 AM - 8:00 PM</p>
+                            <div class="scheduleButtonContainer">
+                                <button class="scheduleButton">
+                                    Ver horario de clases
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dayContainer">
+                        <p>Domingo</p>
+                        <div class="checkScheduleContainer">
+                            <p>8:00 AM - 8:00 PM</p>
+                            <div class="scheduleButtonContainer">
+                                <button class="scheduleButton">
+                                    Ver horario de clases
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </section>
+
+    <section class="section contact">
+        <h2>Contáctanos</h2>
+        <P>
+            ¡Estamos aquí para ayudarte a cumplir tus metas! No dudes en ponerte en contacto con nosotros. <br>
+            <br>
+            Teléfono: 555-1234 <br>
+            Correo electrónico: info@gymelite.com <br>
+            Dirección: Calle Principal 123, Ciudad X
+        </P>
+        <p> Síguenos en nuestras redes sociales: <p class="pGold">Instagram | Facebook | Twitter </p></p>
+
+    </section>
+
+    <footer>
+    </footer>
+
+</body>

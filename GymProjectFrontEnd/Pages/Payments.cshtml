@@ -1,0 +1,205 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.PaymentsModel
+@{
+}
+
+<head>
+    <link rel="preload" href="./css/Schedule.css">
+    <link rel="stylesheet" href="./css/Schedule.css">
+    <link rel="preload" href="./css/ScheduleConfiguration.css">
+    <link rel="stylesheet" href="./css/ScheduleConfiguration.css">
+    <link rel="preload" href="./css/Payments.css">
+    <link rel="stylesheet" href="./css/Payments.css">
+    <title>Payments</title>
+</head>
+<body>
+
+    <header>
+        <div class="headerContainer" id="headerContainer">
+            <div class="navegation-container">
+                <nav class="navigation">
+                    <ul>
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/Schedule">Clases</a></li>
+                        <li><a asp-page="/Trainers">Nuestros Entrenadores</a></li>
+                        <li class="dropdown-nav-menu">
+                            <a href="#" class="dropbtn">Menu</a>
+                            <div class="dropdown-content-nav">
+                                <a asp-page="/ScheduleConfiguration">Gestión de Horarios</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/RoutineManagement">Gestión de Rutinas</a>
+                                <a asp-page="/AppointmentManagement">Gestión de Citas</a>
+                                <a asp-page="/EmployeeManagement">Gestión de Empleados</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/Logout">Cerrar sesión</a>
+                                <a asp-page="/DiscountManagement">Gestión de descuentos</a>
+                                <a asp-page="/CouponManagement">Gestión de cupones</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a asp-page="/Login">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <defs>
+                                        <linearGradient id="heading-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="5%" style="stop-color:#AE8625;stop-opacity:1" />
+                                            <stop offset="45%" style="stop-color:#F7EF8A;stop-opacity:1" />
+                                            <stop offset="85%" style="stop-color:#D2AC47;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" stroke="url(#heading-gradient)" />
+                                    <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="url(#heading-gradient)" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" stroke="url(#heading-gradient)" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <H1>Gestión de pagos</H1>
+    </header>
+
+    <main class="ScheduleContainer" id="ScheduleContainer">
+        <div class="Schedule Container">
+            <div class="dropdown-title-container">
+                <h2>Control de pagos</h2>
+                <div class="dropdown-container">
+                    <h3 class="week-filter">Buscar mes:</h3>
+                    <div class="dropdown">
+                        <input type="text" id="searchBox" class="styled-input" placeholder="Mes X" onclick="toggleDropdown()">
+                        <button class="dropdown-button" onclick="toggleDropdown()">Mes X</button>
+                        <div id="dropdown-content" class="dropdown-content">
+                            <!-- Opciones de semanas se añadirán aquí desde JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Información de Contacto</th>
+                            <th>DNI</th>
+                            <th>Matricula</th>
+                            <th>Mensualidad</th>
+                            <th>Descuento</th>
+                            <th>Cupon</th>
+                            <th>Total</th>
+                            <th>Estado de pago</th>
+                            <th>Fecha de inicio</th>
+                            <th>Fecha de final</th>
+                            <th>Comprobante de pago</th>
+                            <th>Fecha de subida</th>
+                            <th>Aprobacion</th>
+                            <th>Aprobado por</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class=" first-td">Shanty Cerdas</td>
+                            <td> barahona0498@gmail.com <br> 53437927 </td>
+                            <td>305090606</td>
+                            <td> 40$</td>
+                            <td>50$</td>
+                            <td>DESC1(10$)</td>
+                            <td>CSDE123(10$)</td>
+                            <td>70$</td>
+                            <td>Pendiente</td>
+                            <td>01/01/2024</td>
+                            <td>01/02/2024</td>
+                            <td> N/A</td>
+                            <td> N/A</td>
+                            <td>
+                                <div class="button-container" id="button-container-1">
+                                    <div class="reservation-button cancel-edit-button">
+                                        <button class="edit-button">Aprobar</button>
+                                    </div>
+                                    <div class="Reservation cancel-edit-button" id="Reservation">
+                                        <button id="cancel-button">Denegar</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="last-td">N/A</td>
+                        </tr>
+                        <tr class="second-tr">
+                            <td class=" first-td">Shanty Cerdas</td>
+                            <td> barahona0498@gmail.com <br> 53437927 </td>
+                            <td>305090606</td>
+                            <td> 40$</td>
+                            <td>50$</td>
+                            <td>DESC1(10$)</td>
+                            <td>CSDE123(10$)</td>
+                            <td>70$</td>
+                            <td>Completado</td>
+                            <td>01/01/2024</td>
+                            <td>01/02/2024</td>
+                            <td>
+                                <div class="reservation-button" id="download">
+                                    <button class="reserved">Descargar</button>
+                                </div>
+                            </td>
+                            <td> 01/02/2024</td>
+                            <td> N/A </td>
+                            <td class="last-td">Shanty Cerdas</td>
+                        </tr>
+                        <tr>
+                            <td class=" first-td">Shanty Cerdas</td>
+                            <td> barahona0498@gmail.com <br> 53437927 </td>
+                            <td>305090606</td>
+                            <td> 40$</td>
+                            <td>50$</td>
+                            <td>DESC1(10$)</td>
+                            <td>CSDE123(10$)</td>
+                            <td>70$</td>
+                            <td>Pendiente</td>
+                            <td>01/01/2024</td>
+                            <td>01/02/2024</td>
+                            <td> N/A</td>
+                            <td> N/A</td>
+                            <td>
+                                <div class="button-container" id="button-container-1">
+                                    <div class="reservation-button cancel-edit-button">
+                                        <button class="edit-button">Aprobar</button>
+                                    </div>
+                                    <div class="Reservation cancel-edit-button" id="Reservation">
+                                        <button id="cancel-button">Denegar</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="last-td">N/A</td>
+                        </tr>
+                        <tr class="second-tr">
+                            <td class=" first-td">Shanty Cerdas</td>
+                            <td> barahona0498@gmail.com <br> 53437927 </td>
+                            <td>305090606</td>
+                            <td> 40$</td>
+                            <td>50$</td>
+                            <td>DESC1(10$)</td>
+                            <td>CSDE123(10$)</td>
+                            <td>70$</td>
+                            <td>Completado</td>
+                            <td>01/01/2024</td>
+                            <td>01/02/2024</td>
+                            <td>
+                                <div class="reservation-button" id="download">
+                                    <button class="reserved">Descargar</button>
+                                </div>
+                            </td>
+                            <td> 01/02/2024</td>
+                            <td> N/A </td>
+                            <td class="last-td">Shanty Cerdas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/Payment.js" asp-append-version="true"></script>
+
+    <footer>
+    </footer>
+
+
+</body>

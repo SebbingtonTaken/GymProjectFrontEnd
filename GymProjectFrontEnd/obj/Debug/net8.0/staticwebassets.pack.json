@@ -1,0 +1,377 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GymProjectFrontEnd.bundle.scp.css",
+      "PackagePath": "staticwebassets\\GymProjectFrontEnd.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\backGroundImage.png",
+      "PackagePath": "staticwebassets\\Images\\backGroundImage.png"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\boxCoach.jpg",
+      "PackagePath": "staticwebassets\\Images\\boxCoach.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\crossFitCoach.jpg",
+      "PackagePath": "staticwebassets\\Images\\crossFitCoach.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\femaleCoach.jpg",
+      "PackagePath": "staticwebassets\\Images\\femaleCoach.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\femaleTrainer.jpg",
+      "PackagePath": "staticwebassets\\Images\\femaleTrainer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\femaleTrainer2.jpg",
+      "PackagePath": "staticwebassets\\Images\\femaleTrainer2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\loginImage.jpg",
+      "PackagePath": "staticwebassets\\Images\\loginImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\mainImage.jpg",
+      "PackagePath": "staticwebassets\\Images\\mainImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\maleTrainer2.jpg",
+      "PackagePath": "staticwebassets\\Images\\maleTrainer2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\pilatesCoach.jpg",
+      "PackagePath": "staticwebassets\\Images\\pilatesCoach.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\registerImage.jpg",
+      "PackagePath": "staticwebassets\\Images\\registerImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\scheduleBackGround.png",
+      "PackagePath": "staticwebassets\\Images\\scheduleBackGround.png"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\scheduleBackGroundImage.jpg",
+      "PackagePath": "staticwebassets\\Images\\scheduleBackGroundImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\Images\\trainerBackGround.jpg",
+      "PackagePath": "staticwebassets\\Images\\trainerBackGround.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\AccountInformation.css",
+      "PackagePath": "staticwebassets\\css\\AccountInformation.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\AdminManagement.css",
+      "PackagePath": "staticwebassets\\css\\AdminManagement.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Payments.css",
+      "PackagePath": "staticwebassets\\css\\Payments.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Schedule.css",
+      "PackagePath": "staticwebassets\\css\\Schedule.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\ScheduleConfiguration.css",
+      "PackagePath": "staticwebassets\\css\\ScheduleConfiguration.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Trainers.css",
+      "PackagePath": "staticwebassets\\css\\Trainers.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\ControlActions.js",
+      "PackagePath": "staticwebassets\\js\\ControlActions.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Measures.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Measures.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Payment.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Payment.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Schedule.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Schedule.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Trainers.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Trainers.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\site.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GymProjectFrontEnd.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.GymProjectFrontEnd.props",
+      "PackagePath": "build\\GymProjectFrontEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.GymProjectFrontEnd.props",
+      "PackagePath": "buildMultiTargeting\\GymProjectFrontEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.GymProjectFrontEnd.props",
+      "PackagePath": "buildTransitive\\GymProjectFrontEnd.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
