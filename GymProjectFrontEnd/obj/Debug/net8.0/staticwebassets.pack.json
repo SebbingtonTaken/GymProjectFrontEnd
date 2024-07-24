@@ -105,6 +105,10 @@
       "PackagePath": "staticwebassets\\js\\ControlActions.js"
     },
     {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\AllPages.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\AllPages.js"
+    },
+    {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Login.js",
       "PackagePath": "staticwebassets\\js\\Pages\\Login.js"
     },
@@ -127,6 +131,10 @@
     {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\site.js",
       "PackagePath": "staticwebassets\\js\\Pages\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\SessionManager.js",
+      "PackagePath": "staticwebassets\\js\\SessionManager.js"
     },
     {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\LICENSE",

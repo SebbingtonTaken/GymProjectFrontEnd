@@ -58,3 +58,4 @@ C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\
 C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.pdb
 C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.genruntimeconfig.cache
 C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\ref\GymProjectFrontEnd.dll
+C:\Users\barah\OneDrive\Desktop\GymProjectFrontEnd\GymProjectFrontEnd\obj\Debug\net8.0\GymProjectFrontEnd.sourcelink.json

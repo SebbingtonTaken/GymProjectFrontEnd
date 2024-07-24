@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OzZdU8jLl4IWpV7CTSmxUUTaOuHeYgW9qTVRkV/WVSI=",
+  "Hash": "AV/G5WE9AwyCLiOqqc7O3Rwai2b2wGw86jUjmsgr97M=",
   "Source": "GymProjectFrontEnd",
   "BasePath": "_content/GymProjectFrontEnd",
   "Mode": "Default",
@@ -530,6 +530,25 @@
       "OriginalItemSpec": "wwwroot\\js\\ControlActions.js"
     },
     {
+      "Identity": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\AllPages.js",
+      "SourceId": "GymProjectFrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\",
+      "BasePath": "_content/GymProjectFrontEnd",
+      "RelativePath": "js/Pages/AllPages.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Pages\\AllPages.js"
+    },
+    {
       "Identity": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Login.js",
       "SourceId": "GymProjectFrontEnd",
       "SourceType": "Discovered",
@@ -642,6 +661,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Pages\\Trainers.js"
+    },
+    {
+      "Identity": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\SessionManager.js",
+      "SourceId": "GymProjectFrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\",
+      "BasePath": "_content/GymProjectFrontEnd",
+      "RelativePath": "js/SessionManager.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\SessionManager.js"
     },
     {
       "Identity": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
