@@ -1,0 +1,228 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.EmployeeManagementcshtmlModel
+@{
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeManagement</title>
+    <link rel="preload" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preload" href="../CSS/Login.css">
+    <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="preload" href="../CSS/AdminManagement.css">
+    <link rel="stylesheet" href="../CSS/AdminManagement.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="headerContainer" id="headerContainer">
+            <div class="navegation-container">
+                <nav class="navigation">
+                    <ul>
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/Schedule">Clases</a></li>
+                        <li><a asp-page="/Trainers">Nuestros Entrenadores</a></li>
+                        <li class="dropdown-nav-menu">
+                            <a href="#" class="dropbtn">Menu</a>
+                            <div class="dropdown-content-nav">
+                                <a asp-page="/ScheduleConfiguration">Gestión de Horarios</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/RoutineManagement">Gestión de Rutinas</a>
+                                <a asp-page="/AppointmentManagement">Gestión de Citas</a>
+                                <a asp-page="/EmployeeManagement">Gestión de Empleados</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/Logout">Cerrar sesión</a>
+                                <a asp-page="/DiscountManagement">Gestión de descuentos</a>
+                                <a asp-page="/CouponManagement">Gestión de cupones</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a asp-page="/Login">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <defs>
+                                        <linearGradient id="heading-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="5%" style="stop-color:#AE8625;stop-opacity:1" />
+                                            <stop offset="45%" style="stop-color:#F7EF8A;stop-opacity:1" />
+                                            <stop offset="85%" style="stop-color:#D2AC47;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" stroke="url(#heading-gradient)" />
+                                    <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="url(#heading-gradient)" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" stroke="url(#heading-gradient)" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <H1>Gestión de usuario</H1>
+            <p>Registra empleados y administra sus permisos fácilmente.</p>
+            <div class="ButtonContainer ">
+                <div class="Reservation register " id="register-emplyee">
+                    <button onclick="openLoginPopup()">Registrar <br> empleado</button>
+                </div>
+                <div class="CheckSchedule " id="permissions-management">
+                    <button onclick="openForgetPasswordPopup()">Editar permisos</button>
+                </div>
+            </div>
+        </div>
+        <!-- Pop-up for login and forget password -->
+        <div id="popup" class="popup">
+            <div class="popup-content" id="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="permissions-management">
+        <div class="container permission-container">
+            <h2>
+                Configuración de permisos de usuario</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre del Empleado</th>
+                            <th>Rol</th>
+                            <th>Gestion de pagos</th>
+                            <th>Gestion de citas de medición</th>
+                            <th>Gestion de rutinas</th>
+                            <th>Gestion de empleados</th>
+                            <th>Gestion de clases grupales</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Juan Pérez</td>
+                            <td>Administrador</td>
+                            <td><input type="radio" name="employee-1-permission-1" checked></td>
+                            <td><input type="radio" name="employee-1-permission-2" checked></td>
+                            <td><input type="radio" name="employee-1-permission-3"></td>
+                            <td><input type="radio" name="employee-1-permission-4" checked></td>
+                            <td><input type="radio" name="employee-1-permission-5"></td>
+                        </tr>
+                        <tr>
+                            <td>María Gómez</td>
+                            <td>Receptionista</td>
+                            <td><input type="radio" name="employee-2-permission-1"></td>
+                            <td><input type="radio" name="employee-2-permission-2" checked></td>
+                            <td><input type="radio" name="employee-2-permission-3"></td>
+                            <td><input type="radio" name="employee-2-permission-4"></td>
+                            <td><input type="radio" name="employee-2-permission-5"></td>
+                        </tr>
+                        <tr>
+                            <td>Carlos Rodríguez</td>
+                            <td>Entrenador</td>
+                            <td><input type="radio" name="employee-3-permission-1"></td>
+                            <td><input type="radio" name="employee-3-permission-2"></td>
+                            <td><input type="radio" name="employee-3-permission-3" checked></td>
+                            <td><input type="radio" name="employee-3-permission-4"></td>
+                            <td><input type="radio" name="employee-3-permission-5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="ButtonContainer ">
+                    <div class="Reservation confirm " id="confirm-changes">
+                        <button>Confirmar</button>
+                    </div>
+                    <div class="CheckSchedule " id="cancel-changes">
+                        <button>Cancelar</button>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+
+    <main>
+        <div class="form-container">
+            <h2>Registro de empleados</h2>
+            <p>Ingresa los datos del empleado</p>
+            <form id="registration-form">
+                <div class="form-div">
+                    <div class="first-row">
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="name" placeholder="Ingresa el nombre">
+                            <div class="error" id="name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="last-name" placeholder="Ingresa el apellido">
+                            <div class="error" id="last-name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="date" id="birthdate" placeholder="Indica la fecha de nacimiento">
+                            <div class="error" id="birthdate-error"></div>
+                        </div>
+                    </div>
+                    <div class="second-row">
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="dni" placeholder="Proporciona el DNI">
+                            <div class="error" id="dni-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="email" id="email" placeholder="Ingresa la dirección de correo">
+                            <div class="error" id="email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <select id="gender">
+                                <option value="">Género: Selecciona tu género</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <div class="error" id="gender-error"></div>
+                        </div>
+                    </div>
+                    <div class="third-row">
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="address" placeholder="Ingresa el domicilio">
+                            <div class="error" id="address-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="phone-number" placeholder="Ingresa el teléfono">
+                            <div class="error" id="phone-number-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="password" id="password" placeholder="Ingresa la contraseña">
+                            <div class="error" id="password-error"></div>
+                        </div>
+                    </div>
+                    <div class="fourth-row">
+                        <div class="form-group">
+                            <select id="confirmation-method">
+                                <option value="">Método de confirmación de cuenta</option>
+                                <option value="Male" id="emailBtn" class="active" onclick="setConfirmationMethod('email')">Email</option>
+                                <option value="Female" id="smsBtn" onclick="setConfirmationMethod('sms')">Mensaje de texto</option>
+                            </select>
+                            <div class="error" id="confirmation-method-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <select id="role">
+                                <option value="">Rol: Selecciona el rol</option>
+                                <option value="recepcionist">Recepcionista</option>
+                                <option value="trainer">Entrenador de planta</option>
+                                <option value="personal-trainer">Entrenador personal</option>
+                                <option value="complete-trainer">Entrenador completo</option>
+                            </select>
+                            <div class="error" id="role-error"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-button-container">
+                    <button id="send-button" type="submit">Enviar</button>
+                    <button id="reset-button" type="button" onclick="resetForm()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - GymProjectFrontEnd</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" asp-append-version="true" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js" asp-append-version="true"></script>
+    <link rel="preload" href="~/css/style.css" asp-append-version="true" />
+    <link rel="preload" href="~/css/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" asp-append-version="true"></script>
+    <script src="./js/ControlActions.js" asp-append-version="true"></script>
+   
+
+
+</head>
+
+
+
+ 
+
+            @RenderBody()
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</html>

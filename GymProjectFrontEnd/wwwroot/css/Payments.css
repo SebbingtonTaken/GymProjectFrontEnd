@@ -1,0 +1,47 @@
+table, tr {
+    font-size: 15px;
+}
+
+button  , .reserved {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.reservation-button {
+    width: fit-content;
+}
+
+.Container {
+    padding: 100px;
+}
+
+tbody td {
+
+    padding: 20px;
+    height: fit-content;
+
+}
+
+.reservation-button {
+    width: fit-content;
+    padding: 6px;
+}
+
+
+.button-container {
+    gap: 30px;
+}
+
+#cancel-button, #edit-button {
+    font-size: 15px;
+    padding: 2px;
+}
+.cancel-edit-button {
+    width: fit-content;
+    height: 30%;
+    font-size: 20px;
+}

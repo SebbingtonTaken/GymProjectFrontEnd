@@ -1,0 +1,176 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.LoginModel
+@{
+}
+
+<head>
+
+    <link rel="preload" href="~/css/style.css" asp-append-version="true" />
+    <link rel="preload" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Login.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" asp-append-version="true"></script>
+
+</head>
+<body>
+    <header>
+        <div class="headerContainer" id="headerContainer">
+            <div class="navegation-container">
+                <nav class="navigation">
+                    <ul>
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/Schedule">Clases</a></li>
+                        <li><a asp-page="/Trainers">Nuestros Entrenadores</a></li>
+                        <li class="dropdown-nav-menu">
+                            <a href="#" class="dropbtn">Menu</a>
+                            <div class="dropdown-content-nav">
+                                <a asp-page="/ScheduleConfiguration">Gestión de Horarios</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/RoutineManagement">Gestión de Rutinas</a>
+                                <a asp-page="/AppointmentManagement">Gestión de Citas</a>
+                                <a asp-page="/EmployeeManagement">Gestión de Empleados</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/Logout">Cerrar sesión</a>
+                                <a asp-page="/DiscountManagement">Gestión de descuentos</a>
+                                <a asp-page="/CouponManagement">Gestión de cupones</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a asp-page="/Login">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <defs>
+                                        <linearGradient id="heading-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="5%" style="stop-color:#AE8625;stop-opacity:1" />
+                                            <stop offset="45%" style="stop-color:#F7EF8A;stop-opacity:1" />
+                                            <stop offset="85%" style="stop-color:#D2AC47;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" stroke="url(#heading-gradient)" />
+                                    <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="url(#heading-gradient)" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" stroke="url(#heading-gradient)" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <h1>Únete a nuestro gimnasio y transforma tu cuerpo</h1>
+            <p>Registra tu cuenta y empieza a disfrutar de todos nuestros servicios y beneficios exclusivos.</p>
+            <p>¿Ya tienes una cuenta? Inicia sesión.</p>
+            <div class="ButtonContainer">
+                <div class="Reservation login" id="login">
+                    <button >Iniciar <br> sesión</button>
+                </div>
+                <div class="CheckSchedule forget-password" id="forget-password">
+                    <button onclick="openForgetPasswordPopup()">Olvidé contraseña</button>
+                </div>
+            </div>
+        </div>
+        <!-- Pop-up for login and forget password -->
+        <div id="popup" class="popup">
+            <div class="popup-content" id="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h1>Formulario de Registro</h1>
+            <p>Completa este formulario para crear tu cuenta de forma rápida y sencilla</p>
+            <form id="registration-form">
+                <div class="form-div">
+                    <div class="first-row">
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="name" placeholder="Ingresa tu nombre">
+                            <div class="error" id="name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="last-name" placeholder="Ingresa tu apellido">
+                            <div class="error" id="last-name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="date" id="birthdate" placeholder="Indica tu fecha de nacimiento">
+                            <div class="error" id="birthdate-error"></div>
+                        </div>
+                    </div>
+                    <div class="second-row">
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="dni" placeholder="Proporciona tu DNI">
+                            <div class="error" id="dni-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="email" id="email" placeholder="Ingresa una dirección de correo">
+                            <div class="error" id="email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <select id="gender">
+                                <option value="">Género: Selecciona tu género</option>
+                                <option value="M">Hombre</option>
+                                <option value="F">Mujer</option>
+                                <option value="Other">Otro</option>
+                            </select>
+                            <div class="error" id="gender-error"></div>
+                        </div>
+                    </div>
+                    <div class="third-row">
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="address" placeholder="Ingresa tu domicilio">
+                            <div class="error" id="address-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="phone-number" placeholder="Ingresa tu teléfono">
+                            <div class="error" id="phone-number-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="password" id="password" placeholder="Ingresa tu contraseña">
+                            <div class="error" id="password-error"></div>
+                        </div>
+                    </div>
+                    <div class="fourth-row">
+                        <div class="form-group">
+                            <select id="customer-membership">
+                                <option value="">Membresia deseada</option>
+                                <option value="4" id="basic-membership" class="active">Básica</option>
+                                <option value="5" id="regular-membership">Regular</option>
+                                <option value="6" id="premium-membership">Premium</option>
+                            </select>
+                            <div class="error" id="customer-membership-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="confirmation-method">
+                                <option value="">Método de confirmación de cuenta</option>
+                                <option value="Email" id="emailBtn" class="active" onclick="setConfirmationMethod('email')">Email</option>
+                                <option value="Sms" id="smsBtn" onclick="setConfirmationMethod('sms')">Mensaje de texto</option>
+                            </select>
+                            <div class="error" id="confirmation-method-error"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-button-container">
+                    <button id="send-button" type="submit">Enviar</button>
+                    <button id="reset-button" type="button" onclick="resetForm()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <section class="section contact">
+        <h2>Contáctanos</h2>
+        <p>
+            ¡Estamos aquí para ayudarte a cumplir tus metas! No dudes en ponerte en contacto con nosotros. <br><br>
+            Teléfono: 555-1234 <br>
+            Correo electrónico: info@gymelite.com <br>
+            Dirección: Calle Principal 123, Ciudad X
+        </p>
+        <p> Síguenos en nuestras redes sociales: <p class="pGold">Instagram | Facebook | Twitter </p></p>
+    </section>
+
+    <footer></footer>
+
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="~/js/Pages/Login.js"></script>
+</body>
