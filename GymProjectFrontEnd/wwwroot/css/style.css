@@ -141,6 +141,10 @@ nav ul li a {
 nav ul li.dropdown-nav-menu .dropbtn {
     cursor: pointer;
 }
+
+#log-out {
+    cursor: pointer;
+}
 nav ul li.dropdown-nav-menu .dropdown-content-nav {
     display: none;
     position: absolute;

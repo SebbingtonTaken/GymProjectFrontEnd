@@ -1,0 +1,103 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.ExerciseModel
+@{
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeManagement</title>
+    <link rel="preload" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preload" href="../CSS/Login.css">
+    <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="preload" href="../CSS/Equipment.css">
+    <link rel="stylesheet" href="../CSS/Equipment.css">
+    <script src="~/js/Pages/Exercise.js" type="module"></script>
+</head>
+
+<body>
+
+    </div>
+    <H1>Gestion de Ejercicios</H1>
+    <p>Registra o modifica ejercicios facilmente.</p>
+    </div>
+
+
+    </header>
+
+    <section class="permissions-management">
+        <div class="container permission-container">
+            <h2>
+                Configuración de ejercicios</h1>
+                <table id="tblExercises">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre del ejercicio</th>
+                            <th>Tipo</th>
+                            <th>Equipo necesario</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+        </div>
+    </section>
+
+
+    <main>
+        <div class="form-container">
+            <h2>Registro de ejercicio</h2>
+            <p>Ingresa los datos del ejercicio</p>
+            <form id="registration-form">
+                <div class="form-div">
+                    <div class="first-row">
+                        <div class="form-group">
+                            <input class="login-input" type="number" id="txtId" placeholder="Id" readonly="readonly">
+
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="txtName" placeholder="Nombre de ejercicio">
+                            <div class="error" id="name-error"></div>
+                        </div>
+                    </div>
+                    <div class="second-row">
+
+                        <div class="form-group">
+                            <select id="slcTipo">
+                                <option value="">Tipo: Selecciona el tipo</option>
+                                <option value="Peso">Peso</option>
+                                <option value="Tiempo">Tiempo</option>
+                                <option value="AMRAP">AMRAP</option>
+                            </select>
+                            <div class="error" id="area-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <select id="slcEquipment">
+                                <option value="">Equipo: Selecciona el equipo</option>
+                                <option value="27">Area Libre</option>
+                                <option value="28">Polea</option>
+                                <option value="26">Cuerda de saltar</option>
+                            </select>
+                            <div class="error" id="area-error"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-button-container">
+                    <button onclick="" id="btnCreate" type="button">Crear</button>
+                    <button id="btnUpdate" type="button">Modificar</button>
+                    <button id="reset-button" type="button" onclick="resetForm()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>

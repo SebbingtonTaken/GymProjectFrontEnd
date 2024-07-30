@@ -1,34 +1,71 @@
 ﻿@page
-@model GymProjectFrontEnd.Pages.ScheduleModel
+@model GymProjectFrontEnd.Pages.MeasurementAppointmentModel
 @{
 }
-
 
 <head>
     <link rel="preload" href="./css/style.css" asp-append-version="true" />
     <link rel="stylesheet" href="./css/style.css" asp-append-version="true" />
-    <link rel="preload" href="./css/Schedule.css" asp-append-version="true" />
-    <link rel="stylesheet" href="./css/Schedule.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css/MeasurementReservation.css" asp-append-version="true" />
     <title>Schedule</title>
 </head>
 <body>
-            <H1>Horarios del gimnasio</H1>
-            <p>Explore nuestros horarios flexibles y clases emocionantes para aprovechar al máximo tu entrenamiento.</p>
-            <div class="ButtonContainer">
-                <div class="Reservation" id="Reservation">
-                    <button>Reservar ahora</button>
-                </div>
-                <div class="CheckSchedule" id="CheckSchedule">
-                    <button>Ver clases</button>
-                </div>
+
+    <header>
+        <div class="headerContainer" id="headerContainer">
+            <div class="navegation-container">
+                <nav class="navigation">
+                    <ul>
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/Schedule">Clases</a></li>
+                        <li><a asp-page="/Trainers">Nuestros Entrenadores</a></li>
+                        <li class="dropdown-nav-menu">
+                            <a href="#" class="dropbtn">Menu</a>
+                            <div class="dropdown-content-nav">
+                                <a asp-page="/ScheduleConfiguration">Gestión de Horarios</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/RoutineManagement">Gestión de Rutinas</a>
+                                <a asp-page="/AppointmentManagement">Gestión de Citas</a>
+                                <a asp-page="/EmployeeManagement">Gestión de Empleados</a>
+                                <a asp-page="/Payments">Gestión de Pagos</a>
+                                <a asp-page="/Logout">Cerrar sesión</a>
+                                <a asp-page="/DiscountManagement">Gestión de descuentos</a>
+                                <a asp-page="/CouponManagement">Gestión de cupones</a>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a asp-page="/Login">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <defs>
+                                        <linearGradient id="heading-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="5%" style="stop-color:#AE8625;stop-opacity:1" />
+                                            <stop offset="45%" style="stop-color:#F7EF8A;stop-opacity:1" />
+                                            <stop offset="85%" style="stop-color:#D2AC47;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" stroke="url(#heading-gradient)" />
+                                    <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="url(#heading-gradient)" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" stroke="url(#heading-gradient)" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
+            <H1>Reservar cita de medicion</H1>
+            <p>Explore nuestros horarios flexibles.</p>
         </div>
     </header>
 
     <main class="ScheduleContainer" id="ScheduleContainer">
         <div class="Schedule Container">
             <div class="dropdown-title-container">
-                <h2>Horario de clases</h2>
+                <h2>Horario de mediciones</h2>
+                <select id="slcTrainer" class="selectTrainer styled-input">
+                    <option value="">Entrenador</option>
+                </select>
                 <div class="dropdown-container">
                     <h3 class="week-filter">Buscar semana:</h3>
                     <div class="dropdown">
@@ -314,7 +351,7 @@
 
     </section>
 
-    <script src="./js/Pages/Schedule.js" asp-append-version="true"></script>
+    <script src="./js/Schedule.js" asp-append-version="true"></script>
 
     <footer>
     </footer>
