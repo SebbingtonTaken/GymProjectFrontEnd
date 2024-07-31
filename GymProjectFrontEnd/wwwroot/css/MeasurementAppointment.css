@@ -1,0 +1,36 @@
+﻿.cancel-edit-button {
+    width: 75%;
+}
+
+
+#userSelectionPopup {
+    display: none;
+    position: fixed;
+    background-image: none;
+    background-color: var(--schedulePrimaryColor);
+    border: 1px solid var(--primaryGolden);
+    border-radius: 10px;
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    padding-bottom: 2%;
+    overflow-y: auto;
+    font-size: 25px;
+    color: var(--white);
+}
+
+.user-selection {
+    padding: 10px;
+    border-bottom: 1px solid var(--primaryGolden);
+    cursor: pointer;
+}
+
+    .user-selection:hover {
+        background-color: var(--schedulePrimaryColor);
+    }

@@ -69,8 +69,24 @@
       "PackagePath": "staticwebassets\\css\\AdminManagement.css"
     },
     {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Equipment.css",
+      "PackagePath": "staticwebassets\\css\\Equipment.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Exercise.css",
+      "PackagePath": "staticwebassets\\css\\Exercise.css"
+    },
+    {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Login.css",
       "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\MeasurementAppointment.css",
+      "PackagePath": "staticwebassets\\css\\MeasurementAppointment.css"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\MeasurementReservation.css",
+      "PackagePath": "staticwebassets\\css\\MeasurementReservation.css"
     },
     {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Payments.css",
@@ -93,6 +109,10 @@
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
@@ -101,12 +121,44 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\APIActions.js",
+      "PackagePath": "staticwebassets\\js\\APIActions.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\ControlAction.js",
+      "PackagePath": "staticwebassets\\js\\ControlAction.js"
+    },
+    {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\ControlActions.js",
       "PackagePath": "staticwebassets\\js\\ControlActions.js"
     },
     {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\AccountInformation.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\AccountInformation.js"
+    },
+    {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\AllPages.js",
       "PackagePath": "staticwebassets\\js\\Pages\\AllPages.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Coupon.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Coupon.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\EmployeeManagement.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\EmployeeManagement.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Equipment.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Equipment.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\EquipmentManagement.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\EquipmentManagement.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Exercise.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Exercise.js"
     },
     {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Login.js",
@@ -127,6 +179,10 @@
     {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Trainers.js",
       "PackagePath": "staticwebassets\\js\\Pages\\Trainers.js"
+    },
+    {
+      "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\measurespages.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\measurespages.js"
     },
     {
       "Id": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\site.js",

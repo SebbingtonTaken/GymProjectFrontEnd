@@ -35,12 +35,12 @@ $(document).ready(function () {
             this.emailForOtp = email;
             let user = await this.getUserByEmail(email); 
             if (user) {
-                let id = user.id;
+                let id = user.dni;
                 console.log(this.emailForOtp);
                 console.log(id);
                 $('#popup-content').html(`
             <span class="close" id="close">&times;</span>
-            <h2>Recuperar contraseña</h2>
+            <h2>Verificar cuenta</h2>
             <form class="login-form">
                 <div class="form-group-login">
                     <input class="login-input" type="text" id="otp-code" placeholder="Código OTP:">
@@ -73,17 +73,61 @@ $(document).ready(function () {
                     this.closePopup();
                 });
 
-                $('.login-form').on('submit', async (event) => {
+            } else {
+                console.error("Failed to retrieve user, cannot open OTP window");
+            }
+        };
+
+        this.openOtpWindowForPassword = async (email) => {
+            this.emailForOtp = email;
+            let user = await this.getUserByEmail(email);
+            if (user) {
+                let dni = user.dni;
+                console.log(this.emailForOtp);
+                console.log(dni);
+                $('#popup-content').html(`
+            <span class="close" id="close">&times;</span>
+            <h2>Recuperar su clave</h2>
+            <form class="login-form">
+                <div class="form-group-login">
+                    <input class="login-input" type="text" id="otp-code" placeholder="Código OTP:">
+                    <div class="error" id="otp-not-inserted"></div>
+                </div>
+                <div class="ButtonContainer">
+                    <div class="Reservation login"> 
+                        <button id="confirm-otp-recovery">Confirmar</button>
+                    </div>
+                    <div class="CheckSchedule forget-password"> 
+                        <button id="cancel-recovery">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        `);
+                $('#popup').css('display', 'block');
+
+                $('#confirm-otp-recovery').on('click', async (event) => {
                     event.preventDefault();
-                    await this.handleOtpSubmit(id);
+                    await this.handleOtpSubmitForPasswordRecovery(dni, email);
                 });
+
+                $('#close').on('click', (event) => {
+                    event.preventDefault();
+                    this.closePopup();
+                });
+
+                $('#cancel-recovery').on('click', (event) => {
+                    event.preventDefault();
+                    this.closePopup();
+                });
+
+
             } else {
                 console.error("Failed to retrieve user, cannot open OTP window");
             }
         };
 
 
-        this.openPasswordUpdatePopup = () => {
+        this.openPasswordUpdatePopup = (email) => {
             $('#popup-content').html(`
                 <span class="close" id="close">&times;</span>
                 <h2>Actualizar contraseña</h2>
@@ -106,7 +150,7 @@ $(document).ready(function () {
 
             $('#update-password').on('click', async (event) => {
                 event.preventDefault();
-                await this.handlePasswordUpdate();
+                await this.handlePasswordUpdate(email);
             });
 
             $('#close').on('click', (event) => {
@@ -119,10 +163,7 @@ $(document).ready(function () {
                 this.closePopup();
             });
 
-            $('.login-form').on('submit', (event) => {
-                event.preventDefault();
-                this.handlePasswordUpdate();
-            });
+
         };
 
         this.openLoginPopup = () => {
@@ -206,10 +247,6 @@ $(document).ready(function () {
                 this.closePopup();
             });
 
-            $('.login-form').on('submit', async (event) => {
-                event.preventDefault();
-                await this.handleForgetPasswordSubmit();
-            });
         };
 
         this.handleFormSubmit = async function () {
@@ -248,13 +285,17 @@ $(document).ready(function () {
                 confirmationMethod: $("#confirmation-method").val()
             };
 
-            console.log("creadno",user);
-            var endPointRoute = this.ApiBaseEndPoint + "/CreateCustomer";
+            const endPointRoute = this.ApiBaseEndPoint + "/CreateCustomer";
             const controlAction = new ControlActions();
-            controlAction.PostToAPI(endPointRoute, user, () => {
+
+            try {
+                const result = await controlAction.PostToAPI(endPointRoute, user);
                 this.openOtpWindow(user.email);
                 console.log("User Created");
-            });
+                console.log("API Response:", result);
+            } catch (error) {
+                console.error("Error creating user:", error);
+            }
         };
 
         this.validateForm = function () {
@@ -309,17 +350,46 @@ $(document).ready(function () {
         };
 
         this.handleLoginSubmit = async () => {
+            let email = $('#login-email').val();
+            let password = $('#login-password').val();
+
             let loginData = {
-                email: $('#login-email').val(),
-                password: $('#login-password').val()
+                id: 0,
+                creationDate: new Date().toISOString(), 
+                email: email,
+                password: password
             };
 
-            console.log("Logging in with", loginData);
+            try {
+                let user = await this.getUserByEmail(email);
 
-            this.sessionManager.setSession(loginData.email);
-            alert("Login successful");
-            this.closePopup();
+                if (user) {
+                    var controlActions = new ControlActions();
+                    this.ApiBaseEndPoint = "User";
+                    var endPointRoute = `${this.ApiBaseEndPoint}/Login`;
+
+                     let  userFromLogin =  await controlActions.PostToAPI(endPointRoute, loginData);
+                    console.log(userFromLogin);
+
+                    if (userFromLogin) {
+                        this.sessionManager.login(user);
+                        this.closePopup();
+                        alert("Iniciando...")
+                        window.location.href = "/AccountInformation";
+                    } else {
+                        alert("credenciales incorrectas");
+                    }
+      
+                } else {
+                    alert("User not found.");
+                }
+            } catch (error) {
+                console.error("Login error:", error);
+           
+            }
         };
+
+
 
         this.handleOtpSubmit = async (id) => {
             if (this.validateOtpForm()) {
@@ -327,16 +397,15 @@ $(document).ready(function () {
                     let otpCode = $('#otp-code').val();
                     console.log("ID:", id);
 
-                    if (otpCode) { 
+                    if (otpCode) {
                         var controlActions = new ControlActions();
                         this.ApiBaseEndPoint = "User";
                         var endPointRoute = `${this.ApiBaseEndPoint}/ConfirmAccount/${otpCode}/${id}`;
 
-                        await controlActions.PostToAPI(endPointRoute, { otpCode: otpCode, id: id });
+                      await controlActions.PostToAPI(endPointRoute, { otpCode: otpCode, id: id });
 
-                        alert("OTP verificado");
-                        this.closePopup();
-                        this.openPasswordUpdatePopup();
+                      this.closePopup();
+                      
                     } else {
                         alert("Por favor, ingrese un código OTP.");
                     }
@@ -347,22 +416,25 @@ $(document).ready(function () {
             }
         };
 
-            this.handleOtpSubmit = async (id) => {
+
+
+        this.handleOtpSubmitForPasswordRecovery = async (dni, email) => {
             if (this.validateOtpForm()) {
                 try {
                     let otpCode = $('#otp-code').val();
-                    console.log("ID:", id);
+                    console.log("DNI:", dni);
 
-                    if (otpCode) { 
+                    if (otpCode) {
                         var controlActions = new ControlActions();
                         this.ApiBaseEndPoint = "User";
-                        var endPointRoute = `${this.ApiBaseEndPoint}/ConfirmAccount/${otpCode}/${id}`;
+                        var endPointRoute = `${this.ApiBaseEndPoint}/ConfirmOTPForPassword/${otpCode}/${dni}`;
 
-                        await controlActions.PostToAPI(endPointRoute, { otpCode: otpCode, id: id });
-
-                        alert("OTP verificado");
-                        this.closePopup();
-                        this.openPasswordUpdatePopup();
+                        let result = await controlActions.PostToAPI(endPointRoute, { otpCode: otpCode, userId: dni });
+                        console.log(result);
+                       
+                            this.closePopup();
+                            this.openPasswordUpdatePopup(email);
+                  
                     } else {
                         alert("Por favor, ingrese un código OTP.");
                     }
@@ -372,6 +444,7 @@ $(document).ready(function () {
                 }
             }
         };
+
 
         this.validateOtpForm = () => {
             let otpCode = $('#otp-code').val();
@@ -387,6 +460,7 @@ $(document).ready(function () {
             return isValid;
         };
 
+
         this.handleForgetPasswordSubmit = async () => {
             let email = $('#forget-password-email').val();
             if (!email) {
@@ -397,12 +471,30 @@ $(document).ready(function () {
             $('#forget-password-email-error').hide();
 
             let user = await this.getUserByEmail(email);
+
             if (user) {
-                this.openOtpWindow(email, user.id);
+                const controlActions = new ControlActions();
+                this.ApiBaseEndPoint = "User";
+                const endPointRoute = `${this.ApiBaseEndPoint}/SendOTP/${user.dni}`;
+
+                try {
+                    let response = await controlActions.PostToAPI(endPointRoute, { userId: user.dni });
+                    console.log("esta respeusta", response);
+
+                    if (response) {
+
+                       alert("Se ha enviado un código OTP para cambiar su clave.");
+                       this.openOtpWindowForPassword(email);
+                    } 
+                } catch (error) {
+                    console.error("Error al enviar el OTP:", error);
+                }
             } else {
                 alert("Usuario no encontrado");
             }
         };
+
+
 
         this.getUserByEmail = async (email) => {
             const controlActions = new ControlActions();
@@ -419,7 +511,7 @@ $(document).ready(function () {
         };
 
 
-        this.handlePasswordUpdate = async () => {
+        this.handlePasswordUpdate = async (email) => {
             let newPassword = $('#new-password').val();
             let isValid = true;
 
@@ -430,14 +522,32 @@ $(document).ready(function () {
                 $('#new-password-error').text('').hide();
             }
 
+            let user = await this.getUserByEmail(email);
+
             if (isValid) {
                 try {
-                    var controlActions = new ControlActions();
-  
-                    var endPointRoute = this.ApiBaseEndPoint + "/UpdatePassword";
-                    await controlActions.PostToAPI(endPointRoute, { userId: this.userIdForPasswordUpdate, newPassword: newPassword });
-                    alert("Contraseña actualizada");
-                    this.closePopup();
+                    const controlActions = new ControlActions();
+                    this.ApiBaseEndPoint = "User";
+                    const user = await this.getUserByEmail(email);
+                    const endPointRoute = `${this.ApiBaseEndPoint}/UpdatePassword`;
+
+                    let loginData = {
+                        id: user.dni,
+                        creationDate: new Date().toISOString(),
+                        email: email,
+                        password: newPassword
+                    };
+
+                    console.log(loginData);
+
+                    controlActions.PutToAPI(endPointRoute, loginData, function (response) {
+                        if (response.success) {
+                            this.closePopup();
+                            alert(response.message || "Password updated successfully.");
+                        } else {
+                            alert(response.message || "Error updating password.");
+                        }
+                    }.bind(this));
                 } catch (error) {
                     console.error("Error en la actualización de contraseña:", error);
                     alert("Error en la actualización de contraseña. Inténtelo de nuevo más tarde.");
@@ -450,7 +560,6 @@ $(document).ready(function () {
         };
     }
 
-    // Instantiate and initialize
     const loginController = new LoginViewController();
     loginController.InitView();
 });

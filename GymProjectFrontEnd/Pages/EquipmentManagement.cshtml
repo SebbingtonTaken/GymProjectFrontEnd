@@ -1,0 +1,92 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.EquipmentManagementModel
+@{
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeManagement</title>
+    <link rel="preload" href="./css//style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preload" href="./css/Login.css">
+    <link rel="stylesheet" href="./css/Login.css">
+    <link rel="preload" href="./css/Equipment.css">
+    <link rel="stylesheet" href="./css/Equipment.css">
+    <script src="~/js/Pages/Equipment.js" type="module"> </script>
+    <script src="~/js/Pages/EquipmentManagement.js" type="module"> </script>
+</head>
+
+<body>
+            <H1>Gestión de Equipo</H1>
+            <p>Registra equipo facilmente.</p>
+        </div>
+
+
+    </header>
+
+    <section class="permissions-management">
+        <div class="container permission-container">
+            <h2>Configuración de equipo</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del equipo</th>
+                        <th>Área</th>
+                    </tr>
+                </thead>
+                <tbody id="equipment-table-body">
+                    <!-- Las filas se agregarán dinámicamente aquí -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <main>
+        <div class="form-container">
+            <h2>Registro de equipo</h2>
+            <p>Ingresa los datos del equipo</p>
+            <form id="registration-form">
+                <div class="form-div">
+                    <div class="first-row">
+                        <div class="form-group">
+                            <input class="login-input" type="number" id="txtId" placeholder="Id" readonly="readonly" style="display:none">
+
+                        </div>
+                        <div class="form-group">
+                            <input class="login-input" type="text" id="txtName" placeholder="Nombre de equipo">
+                            <div class="error" id="name-error"></div>
+                        </div>
+                    </div>
+                    <div class="second-row">
+ 
+                        <div class="form-group">
+                            <select id="slcArea">
+                                <option value="">Area: Selecciona el area</option>
+                                <option value="1">Pesas</option>
+                                <option value="2">Cardio</option>
+                                <option value="3">Maquinas</option>
+                            </select>
+                            <div class="error" id="area-error"></div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="form-button-container">
+                    <button id="send-button" type="submit">Crear</button>
+                    <button id="modify-button" type="submit">Modificar</button>
+                    <button id="reset-button" type="button" onclick="resetForm()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>

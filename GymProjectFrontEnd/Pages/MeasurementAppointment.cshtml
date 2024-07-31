@@ -1,0 +1,90 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.MeasurementAppointmentModel
+@{
+}
+
+<head>
+    <link rel="preload" href="./css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css/MeasurementReservation.css" asp-append-version="true" />
+    <link rel="preload" href="./css/Schedule.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css/Schedule.css" asp-append-version="true" />
+    <link rel="preload" href="./css/ScheduleConfiguration.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css/ScheduleConfiguration.css" asp-append-version="true" />
+    <link rel="preload" href="./css/MeasurementAppointment.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./css/MeasurementAppointment.css" asp-append-version="true" />
+    <title>Schedule</title>
+</head>
+
+    <H1>Reservar cita de medicion</H1>
+    <p>Explore nuestros horarios flexibles.</p>
+
+    </header>
+
+    <body>
+        <main class="ScheduleContainer" id="ScheduleContainer">
+            <div class="Schedule Container">
+                <div class="dropdown-title-container">
+                    <h2>Horario de clases</h2>
+                    <select id="slcTrainer" class="selectTrainer styled-input">
+                        <option value="">Entrenador</option>
+                    </select>
+                    <div class="dropdown-container">
+                        <h3 class="week-filter">Buscar semana:</h3>
+                        <div class="dropdown">
+                            <input type="text" id="searchBox" class="styled-input" placeholder="Semana X" onclick="toggleDropdown()">
+                            <button class="dropdown-button" onclick="toggleDropdown()">Semana X</button>
+                            <div id="dropdown-content" class="dropdown-content">
+                                <!-- Opciones de semanas se añadirán aquí desde JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hora</th>
+                                <th>Lunes</th>
+                                <th>Martes</th>
+                                <th>Miércoles</th>
+                                <th>Jueves</th>
+                                <th>Viernes</th>
+                                <th>Sábado</th>
+                                <th>Domingo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Schedule will be generated here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+    <div id="userSelectionPopup" style="display: none;">
+        <div id="userListContainer"></div>
+    </div>
+
+
+
+    <section class="section contact">
+        <h2>Contáctanos</h2>
+        <P>
+            ¡Estamos aquí para ayudarte a cumplir tus metas! No dudes en ponerte en contacto con nosotros. <br>
+            <br>
+            Teléfono: 555-1234 <br>
+            Correo electrónico: info@gymelite.com <br>
+            Dirección: Calle Principal 123, Ciudad X
+        </P>
+        <p> Síguenos en nuestras redes sociales: <p class="pGold">Instagram | Facebook | Twitter </p></p>
+
+    </section>
+
+        <script src="./js/Pages/MeasurementAppointment.js" type="module" asp-append-version="true"></script>
+
+        <footer>
+    </footer>
+
+
+</body>

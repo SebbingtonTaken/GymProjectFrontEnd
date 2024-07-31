@@ -8,59 +8,100 @@
     };
 
     // POST request
-    this.PostToAPI = function (service, data, callBackFunction) {
-        $.ajax({
-            type: "POST",
-            url: this.GetUrlApiService(service),
-            data: JSON.stringify(data),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (data) {
-                if (callBackFunction) {
-                    Swal.fire(
-                        'Good job!',
-                        'Transaction completed!',
-                        'success'
-                    );
-                    callBackFunction(data);
-                }
-            },
-            error: function (jqXHR) {
-                var responseJson = jqXHR.responseJSON;
-                var message = jqXHR.responseText;
+    this.PostToAPI = function (service, data) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                type: "POST",
+                url: this.GetUrlApiService(service),
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response, textStatus, jqXHR) {
+                 
+                    if (jqXHR.status === 200) {
+                        
+                        const otpMessage = "OTP fue generado y enviado a su correo y celular";
+                        if (response === otpMessage) {
+                        
+                       
+                            Swal.fire({
+                                icon: 'info',
+                                title: 'OTP Enviado',
+                                text: response,
+                                footer: 'UCenfotec'
+                            });
+                        } else {
+                            // Handle general success
+                            Swal.fire(
+                                'Good job!',
+                                'Transaction completed!',
+                                'success'
+                            );
+                        }
+                        resolve(response);
+                    } else {
+                        // Handle non-200 status
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            html: response,
+                            footer: 'UCenfotec'
+                        });
+                        reject(new Error(response));
+                    }
+                },
+                error: function (jqXHR) {
+                    var responseJson = jqXHR.responseJSON;
+                    var message = jqXHR.responseText;
 
-                if (responseJson) {
-                    var errors = responseJson.errors;
-                    var errorMessages = Object.values(errors).flat();
-                    message = errorMessages.join("<br/> ");
+                    if (responseJson) {
+                        var errors = responseJson.errors;
+                        var errorMessages = Object.values(errors).flat();
+                        message = errorMessages.join("<br/> ");
+                    }
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        html: message,
+                        footer: 'UCenfotec'
+                    });
+                    reject(new Error(message));
                 }
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    html: message,
-                    footer: 'UCenfotec'
-                });
-            }
+            });
         });
     };
 
     // PUT request
     this.PutToAPI = function (service, data, callBackFunction) {
-        $.put(this.GetUrlApiService(service), data, function (response) {
-            Swal.fire(
-                'Good job!',
-                'Transaction completed!',
-                'success'
-            );
+        $.put(this.GetUrlApiService(service), data, function (response, textStatus, jqXHR) {
+            if (jqXHR.status === 200) {
+                Swal.fire(
+                    'Good job!',
+                    'Transaction completed!',
+                    'success'
+                );
 
-            if (callBackFunction) {
-                callBackFunction(response);
+                if (callBackFunction) {
+                    callBackFunction(response);
+                }
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    html: response,
+                    footer: 'UCenfotec'
+                });
             }
-        }).fail(function (response) {
-            var data = response.responseJSON;
-            var errors = data.errors;
-            var errorMessages = Object.values(errors).flat();
-            var message = errorMessages.join("<br/> ");
+        }).fail(function (jqXHR) {
+            var responseJson = jqXHR.responseJSON;
+            var message = jqXHR.responseText;
+
+            if (responseJson && responseJson.errors) {
+                var errors = responseJson.errors;
+                var errorMessages = Object.values(errors).flat();
+                message = errorMessages.join("<br/> ");
+            }
+
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -72,21 +113,30 @@
 
     // DELETE request
     this.DeleteToAPI = function (service, data, callBackFunction) {
-        $.delete(this.GetUrlApiService(service), data, function (response) {
-            Swal.fire(
-                'Good job!',
-                'Transaction completed!',
-                'success'
-            );
+        $.delete(this.GetUrlApiService(service), data, function (response, textStatus, jqXHR) {
+            if (jqXHR.status === 200) {
+                Swal.fire(
+                    'Good job!',
+                    'Transaction completed!',
+                    'success'
+                );
 
-            if (callBackFunction) {
-                callBackFunction(response);
+                if (callBackFunction) {
+                    callBackFunction(response);
+                }
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    html: response,
+                    footer: 'UCenfotec'
+                });
             }
-        }).fail(function (xhr) {
+        }).fail(function (jqXHR) {
             try {
-                var data = xhr.responseJSON;
-                if (data && data.errors) {
-                    var errorMessages = Object.values(data.errors).flat();
+                var responseJson = jqXHR.responseJSON;
+                if (responseJson && responseJson.errors) {
+                    var errorMessages = Object.values(responseJson.errors).flat();
                     var message = errorMessages.join("<br/> ");
                     Swal.fire({
                         icon: 'error',
@@ -118,9 +168,19 @@
     this.GetToApi = function (service) {
         return new Promise((resolve, reject) => {
             $.get(this.GetUrlApiService(service))
-                .done((response) => {
-                    console.log("Response " + response);
-                    resolve(response);
+                .done((response, textStatus, jqXHR) => {
+                    if (jqXHR.status === 200) {
+                   
+                        resolve(response);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            html: response,
+                            footer: 'UCenfotec'
+                        });
+                        reject(new Error(response));
+                    }
                 })
                 .fail((jqXHR, textStatus, errorThrown) => {
                     console.error("Error fetching data:", textStatus, errorThrown);
@@ -141,7 +201,8 @@ $.put = function (url, data, callback) {
         type: 'PUT',
         success: callback,
         data: JSON.stringify(data),
-        contentType: 'application/json'
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json'
     });
 };
 

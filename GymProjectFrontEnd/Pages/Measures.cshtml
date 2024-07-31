@@ -1,0 +1,75 @@
+﻿@page
+@model GymProjectFrontEnd.Pages.MeasuresModel
+@{
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measure</title>
+    <link rel="preload" href="../CSS/style.css" as="style">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preload" href="../CSS/Login.css" as="style">
+    <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="preload" href="../CSS/Equipment.css" as="style">
+    <link rel="stylesheet" href="../CSS/Equipment.css">
+    <script src="~/js/Pages/measurespages.js" type="module"></script>
+</head>
+
+ <H1>Gestión de Mediciones</H1>
+            <p>Registra mediciones facilmente.</p>
+        </div>
+
+    </header>
+
+
+<main>
+    <div class="form-container">
+        <h2>Registro de Medición</h2>
+        <p>Ingresa los datos de la Medición: </p>
+
+        <form id="registration-form">
+   
+            <div class="form-div">
+                <div class="first-row">
+                    <div class="form-group" style="display:none">
+                        <input class="login-input" type="number" id="txtId" placeholder="Id" readonly="readonly">
+                    </div>
+                    <div class="form-group">
+                        <input class="login-input" type="number" id="txtPeso" placeholder="Peso">
+                        <div class="error" id="name-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="login-input" type="number" id="txtAltura" placeholder="Altura">
+                        <div class="error" id="name-error"></div>
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="form-group">
+                        <input class="login-input" type="number" id="txtGrasa" placeholder="% de Grasa">
+                        <div class="error" id="name-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <select id="slcUsuario" class="login-input" >
+                            <!-- Usuarios serán añadidos dinámicamente aquí -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-button-container">
+                <button id="btnGuardar" type="button">Crear</button>
+                <button id="btnModificar" type="button">Modificar</button>
+                <button id="reset-button" type="button" onclick="resetForm()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+
+    <footer></footer>
+
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
