@@ -1,4 +1,4 @@
-﻿/*Header*/
+﻿﻿ /*Header*/
 header {
     background-image: linear-gradient(var(--imageBackground), var(--imageBackground)), url('../Images/pilatesCoach.jpg');
     background-size: cover;
@@ -67,4 +67,373 @@ input[type="radio"] {
 
 .form-group {
     margin-left: 12px;
+}
+
+
+
+.sendButton {
+    background: var(--heading-gradient);
+    border-radius: 6px;
+    border: 2px solid var(--primaryGolden);
+    width: 15%;
+    font-size: 15px;
+    justify-self: end;
+}
+
+header {
+    background-image: linear-gradient(var(--imageBackground), var(--imageBackground)), url('../Images/loginImage.jpg');
+    background-size: cover;
+    background-position-y: 20%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerContainer {
+    width: 45%;
+    height: 100%;
+}
+
+.ButtonContainer {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 39%;
+    gap: 15px;
+}
+
+.Reservation {
+    background: var(--heading-gradient);
+    width: 40%;
+    height: 28%;
+    border-radius: 6px;
+    border: 2px solid var(--primaryGolden);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .Reservation button {
+        border: none;
+        background: none;
+        padding: 0;
+        font-size: 23px;
+        font-weight: 200;
+        color: var(--black);
+    }
+
+.CheckSchedule {
+    background: var(--black);
+    width: 40%;
+    height: 28%;
+    border-radius: 6px;
+    border: 3px solid var(--secondaryGolden);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .CheckSchedule p {
+        color: var(--primaryGolden);
+    }
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    color: var(--primaryGolden);
+    font-size: 23px;
+    font-weight: 200;
+}
+
+    button:hover {
+        cursor: pointer;
+    }
+
+.ButtonContainer {
+    margin-top: 5%;
+}
+
+/* form container*/
+
+.form-container {
+    background-color: var(--schedulePrimaryColor);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height: fit-content;
+}
+
+    .form-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-container button {
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--primaryGolden);
+        color: var(--black);
+        font-size: 18px;
+        cursor: pointer;
+        width: 90px;
+    }
+
+        .form-container button:hover {
+            background-color: #b08c2f;
+        }
+
+    .form-container .confirmation-methods {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        background-color: var(--formBackGround);
+        color: var(--black);
+        width: 30%;
+        height: auto;
+        padding: 15px;
+        border-radius: 10px;
+        padding: 0, 100px;
+    }
+
+        .form-container .confirmation-methods button {
+            width: 48%;
+            background-color: var(--schedulePrimaryColor);
+            color: var(--white);
+        }
+
+            .form-container .confirmation-methods button.active {
+                background-color: var(--primaryGolden);
+                color: var(--black);
+            }
+
+
+main {
+    background-color: var(--black);
+    height: fit-content;
+    width: 100%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-row, .second-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.third-row, .fourth-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.form-container .form-group {
+    background-color: var(--formBackGround);
+    margin-bottom: 10px;
+    border-radius: 2px;
+    width: 30%;
+    height: 100%;
+    outline: none;
+    border-radius: 10px;
+}
+
+.form-container input, .form-container select {
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    border-color: var(--formBackGround);
+    outline: none;
+    color: var(--black);
+    text-align: center;
+}
+
+
+:placeholder-shown, span {
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: var(--black);
+    color: var(--black);
+    text-align: center;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300px;
+}
+
+.login-input {
+    color: var(--black);
+    font-size: 20px;
+    border: 1px solid var(--formBackGround);
+    border-radius: 5px;
+    background: var(--formBackGround);
+    border-radius: 5px;
+    text-align: left;
+}
+
+    .login-input:focus {
+        color: var(--black);
+    }
+
+select, option {
+    background-color: var(--formBackGround);
+    font-size: 18px;
+}
+
+
+.fourth-row, .fifth-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirmation-methods p {
+    font-size: 15px;
+    color: var(--black);
+}
+
+.confirmation-methods-container {
+    display: flex;
+    justify-content: space-around;
+    ;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+#reset-button, #send-button {
+    font-size: 15px;
+    margin-left: 80%;
+}
+
+#send-button {
+    background: var(--heading-gradient);
+    border-radius: 6px;
+    border: 2px solid var(--primaryGolden);
+}
+
+.form-button-container {
+    display: flex;
+    gap: 40px;
+    margin-right: 10%;
+    justify-content: flex-end;
+}
+
+#reset-button {
+    background: var(--black);
+    color: var(--primaryGolden);
+    border-radius: 6px;
+    border: 3px solid var(--secondaryGolden);
+    margin-left: 0%;
+}
+
+
+.error {
+    color: red;
+    font-size: 22px;
+    display: none;
+}
+
+
+
+/*pop up */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.popup-content {
+    background-color: var(--schedulePrimaryColor);
+    margin: 15% auto;
+    padding: 5px;
+    border: 1px solid var(--primaryGolden);
+    width: 25%;
+    border-radius: 10px;
+    text-align: left;
+    text-align: start;
+    height: fit-content;
+    padding-bottom: 2%;
+}
+
+
+    .popup-content h2 {
+        font-size: 35px;
+        margin-left: 10%;
+    }
+
+.form-group-login {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin-left: 10%;
+    margin-right: auto;
+    gap: 25px;
+}
+
+.close {
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: var(--primaryGolden);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.popup .ButtonContainer {
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+
+.popup .login, .popup .forget-password {
+    height: fit-content;
+    width: 20%;
+}
+
+#final-login, #final-forget-password {
+    font-size: 20px;
+}
+
+.fourth-row {
+    justify-content: space-between;
+    margin: 0 10px;
 }

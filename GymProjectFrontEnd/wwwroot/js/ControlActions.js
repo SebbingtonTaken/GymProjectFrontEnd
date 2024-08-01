@@ -17,13 +17,9 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response, textStatus, jqXHR) {
-                 
                     if (jqXHR.status === 200) {
-                        
                         const otpMessage = "OTP fue generado y enviado a su correo y celular";
                         if (response === otpMessage) {
-                        
-                       
                             Swal.fire({
                                 icon: 'info',
                                 title: 'OTP Enviado',
@@ -72,41 +68,50 @@
     };
 
     // PUT request
-    this.PutToAPI = function (service, data, callBackFunction) {
-        $.put(this.GetUrlApiService(service), data, function (response, textStatus, jqXHR) {
-            if (jqXHR.status === 200) {
-                Swal.fire(
-                    'Good job!',
-                    'Transaction completed!',
-                    'success'
-                );
+    this.PutToAPI = function (service, data) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                type: "PUT",
+                url: this.GetUrlApiService(service),
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response, textStatus, jqXHR) {
+                    if (jqXHR.status === 200) {
+                        Swal.fire(
+                            'Good job!',
+                            'Transaction completed!',
+                            'success'
+                        );
+                        resolve(response);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            html: response,
+                            footer: 'UCenfotec'
+                        });
+                        reject(new Error(response));
+                    }
+                },
+                error: function (jqXHR) {
+                    var responseJson = jqXHR.responseJSON;
+                    var message = jqXHR.responseText;
 
-                if (callBackFunction) {
-                    callBackFunction(response);
+                    if (responseJson && responseJson.errors) {
+                        var errors = responseJson.errors;
+                        var errorMessages = Object.values(errors).flat();
+                        message = errorMessages.join("<br/> ");
+                    }
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        html: message,
+                        footer: 'UCenfotec'
+                    });
+                    reject(new Error(message));
                 }
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    html: response,
-                    footer: 'UCenfotec'
-                });
-            }
-        }).fail(function (jqXHR) {
-            var responseJson = jqXHR.responseJSON;
-            var message = jqXHR.responseText;
-
-            if (responseJson && responseJson.errors) {
-                var errors = responseJson.errors;
-                var errorMessages = Object.values(errors).flat();
-                message = errorMessages.join("<br/> ");
-            }
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                html: message,
-                footer: 'UCenfotec'
             });
         });
     };
@@ -170,7 +175,6 @@
             $.get(this.GetUrlApiService(service))
                 .done((response, textStatus, jqXHR) => {
                     if (jqXHR.status === 200) {
-                   
                         resolve(response);
                     } else {
                         Swal.fire({

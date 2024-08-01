@@ -1,16 +1,14 @@
 header {
-    background-image: 
-    linear-gradient(var(--imageBackground), var(--imageBackground)), 
-    url('../Images/trainerBackGround.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; 
-        width: 100%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    background-image: linear-gradient(var(--imageBackground), var(--imageBackground)), url('../Images/trainerBackGround.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .trainer-section {

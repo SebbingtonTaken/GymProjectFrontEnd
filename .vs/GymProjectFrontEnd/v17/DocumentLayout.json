@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|c:\\users\\barah\\onedrive\\desktop\\gymprojectfrontend\\gymprojectfrontend\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|solutionrelative:gymprojectfrontend\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|c:\\users\\barah\\onedrive\\desktop\\gymprojectfrontend\\gymprojectfrontend\\pages\\trainers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|solutionrelative:gymprojectfrontend\\pages\\trainers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|c:\\users\\barah\\onedrive\\desktop\\gymprojectfrontend\\gymprojectfrontend\\pages\\measurementappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|solutionrelative:gymprojectfrontend\\pages\\measurementappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|c:\\users\\barah\\onedrive\\desktop\\gymprojectfrontend\\gymprojectfrontend\\wwwroot\\js\\pages\\trainers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|solutionrelative:gymprojectfrontend\\wwwroot\\js\\pages\\trainers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|c:\\users\\barah\\onedrive\\desktop\\gymprojectfrontend\\gymprojectfrontend\\wwwroot\\js\\pages\\schedule.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|solutionrelative:gymprojectfrontend\\wwwroot\\js\\pages\\schedule.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|c:\\users\\barah\\onedrive\\desktop\\gymprojectfrontend\\gymprojectfrontend\\wwwroot\\js\\pages\\measurementappointment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|solutionrelative:gymprojectfrontend\\wwwroot\\js\\pages\\measurementappointment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|c:\\users\\barah\\onedrive\\desktop\\gymprojectfrontend\\gymprojectfrontend\\wwwroot\\js\\apiactions.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3A51255F-90BC-4C32-BA71-F1A2FF57D555}|GymProjectFrontEnd\\GymProjectFrontEnd.csproj|solutionrelative:gymprojectfrontend\\wwwroot\\js\\apiactions.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +30,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Login.css",
-              "DocumentMoniker": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Login.css",
-              "RelativeDocumentMoniker": "GymProjectFrontEnd\\wwwroot\\css\\Login.css",
-              "ToolTip": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\css\\Login.css",
-              "RelativeToolTip": "GymProjectFrontEnd\\wwwroot\\css\\Login.css",
-              "ViewState": "AQIAABoBAAAAAAAAAAAAACwBAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-07-30T23:03:57.785Z",
+              "DocumentIndex": 1,
+              "Title": "Trainers.js",
+              "DocumentMoniker": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Trainers.js",
+              "RelativeDocumentMoniker": "GymProjectFrontEnd\\wwwroot\\js\\Pages\\Trainers.js",
+              "ToolTip": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Trainers.js",
+              "RelativeToolTip": "GymProjectFrontEnd\\wwwroot\\js\\Pages\\Trainers.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-01T19:31:17.042Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MeasurementAppointment.cshtml",
-              "DocumentMoniker": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\Pages\\MeasurementAppointment.cshtml",
-              "RelativeDocumentMoniker": "GymProjectFrontEnd\\Pages\\MeasurementAppointment.cshtml",
-              "ToolTip": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\Pages\\MeasurementAppointment.cshtml",
-              "RelativeToolTip": "GymProjectFrontEnd\\Pages\\MeasurementAppointment.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "MeasurementAppointment.js",
+              "DocumentMoniker": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\MeasurementAppointment.js",
+              "RelativeDocumentMoniker": "GymProjectFrontEnd\\wwwroot\\js\\Pages\\MeasurementAppointment.js",
+              "ToolTip": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\MeasurementAppointment.js",
+              "RelativeToolTip": "GymProjectFrontEnd\\wwwroot\\js\\Pages\\MeasurementAppointment.js",
+              "ViewState": "AQIAAAcBAAAAAAAAAADwvxoBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-01T19:43:45.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Schedule.js",
+              "DocumentMoniker": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Schedule.js",
+              "RelativeDocumentMoniker": "GymProjectFrontEnd\\wwwroot\\js\\Pages\\Schedule.js",
+              "ToolTip": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\Pages\\Schedule.js",
+              "RelativeToolTip": "GymProjectFrontEnd\\wwwroot\\js\\Pages\\Schedule.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-01T19:31:05.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "APIActions.js",
+              "DocumentMoniker": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\APIActions.js",
+              "RelativeDocumentMoniker": "GymProjectFrontEnd\\wwwroot\\js\\APIActions.js",
+              "ToolTip": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\wwwroot\\js\\APIActions.js",
+              "RelativeToolTip": "GymProjectFrontEnd\\wwwroot\\js\\APIActions.js",
+              "ViewState": "AQIAADsAAAAAAAAAAAAAAEcAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-01T19:24:29.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Trainers.cshtml",
+              "DocumentMoniker": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\Pages\\Trainers.cshtml",
+              "RelativeDocumentMoniker": "GymProjectFrontEnd\\Pages\\Trainers.cshtml",
+              "ToolTip": "C:\\Users\\barah\\OneDrive\\Desktop\\GymProjectFrontEnd\\GymProjectFrontEnd\\Pages\\Trainers.cshtml",
+              "RelativeToolTip": "GymProjectFrontEnd\\Pages\\Trainers.cshtml",
+              "ViewState": "AQIAAPoCAAAAAAAAAAAAAAgDAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T23:03:14.199Z"
+              "WhenOpened": "2024-08-01T19:11:39.54Z",
+              "EditorCaption": ""
             }
           ]
         }

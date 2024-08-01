@@ -17,7 +17,7 @@
 </head>
 
     <H1>Reservar cita de medicion</H1>
-    <p>Explore nuestros horarios flexibles.</p>
+    <p>Reserva la cita de medicion de tus clientes.</p>
 
     </header>
 
@@ -63,7 +63,14 @@
         </main>
 
     <div id="userSelectionPopup" style="display: none;">
-        <div id="userListContainer"></div>
+        <span class="close" id="closePopup" onclick="closePopup()">&times;</span>
+        <p>Selecciona un usuario de la lista:</p>
+        <select id="userSelect"></select>
+        <div class="loginButtonContainer">
+            <div class="createAccount" id="createAppointment">
+                <button id="confirm-appointment-button">Confirmar Cita</button>
+            </div>
+        </div>
     </div>
 
 

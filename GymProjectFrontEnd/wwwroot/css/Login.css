@@ -354,3 +354,12 @@ h1 {
     justify-content: space-between;
     margin: 0 10px;
 }
+
+.popup .login, .popup .forget-password {
+    height: fit-content;
+    width: 29%;
+}
+
+#forget-button {
+    padding:2.3%;
+}

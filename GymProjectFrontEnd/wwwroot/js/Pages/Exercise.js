@@ -1,4 +1,5 @@
 ﻿import { ControlAction } from '../ControlAction.js';
+import { ControlActions } from '../ControlActions.js';
 
 function ExercisesViewController() {
     this.ViewName = "Exercises";
@@ -27,6 +28,7 @@ function ExercisesViewController() {
         //carga de la tabla
 
         this.LoadTable();
+        this.loadDropdownEquipment();
     }
 
     //Metodo de creacion de usuarios
@@ -98,6 +100,35 @@ function ExercisesViewController() {
         //    console.log("Product Deleted");
         //});
     }
+    this.loadDropdownEquipment = function () {
+
+        var ca = new ControlActions();
+        var urlService = "Equipment/RetrieveAll";
+
+
+
+
+
+        // Loop through each object in the JSON array
+        ca.GetToApi(urlService)
+            .then(response => {
+                populateSelect(response);
+            })
+            .catch(error => {
+                console.error("Failed to load equipment data:", error);
+            });
+
+    }
+
+    function populateSelect(data) {
+        const select = document.getElementById('slcEquipment');
+        data.forEach(function (item) {
+            const option = document.createElement('option');
+            option.text = item.equipmentName;
+            option.value = item.id;
+            select.add(option);
+        });
+    }
     this.LoadTable = function () {
         var ca = new ControlAction();
 
@@ -152,8 +183,6 @@ function ExercisesViewController() {
         });
     }
 }
-
-
 
 //instanciamos la clase
 

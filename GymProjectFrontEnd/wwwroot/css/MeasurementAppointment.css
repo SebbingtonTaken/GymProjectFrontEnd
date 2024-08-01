@@ -1,5 +1,7 @@
 ﻿.cancel-edit-button {
-    width: 75%;
+    width: fit-content;
+    height:fit-content;
+    padding: 3%;
 }
 
 
@@ -15,7 +17,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    border: 1px solid #ccc;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     height: fit-content;
@@ -25,12 +26,87 @@
     color: var(--white);
 }
 
+
+.closePopup {
+    margin-top: 10px;
+}
+
+.closePopup button {
+        background-color: var(--primaryGolden); 
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+.closePopup button:hover {
+            background-color: #d32f2f; 
+        }
+
 .user-selection {
     padding: 10px;
     border-bottom: 1px solid var(--primaryGolden);
     cursor: pointer;
 }
 
-    .user-selection:hover {
+.user-selection:hover {
         background-color: var(--schedulePrimaryColor);
+ }
+
+
+ #slcTrainer option {
+            background: var(--heading-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--black);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+}
+
+
+.close {
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+ close:focus {
+        color: var(--primaryGolden);
+        text-decoration: none;
+        cursor: pointer;
     }
+
+.loginButtonContainer {
+    width: 100%;
+}
+
+.createAccount {
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 3%;
+}
+
+#confirm-appointment-button{
+    font-size:18px;
+}
+
+#userSelect {
+    margin-left: 40%;
+    margin-right: auto;
+    height: fit-content;
+    width: fit-content;
+    font-size: 19px;
+    background-color: black;
+    color: var(--primaryGolden);
+    margin-bottom: 10%;
+}

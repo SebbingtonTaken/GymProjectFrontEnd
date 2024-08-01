@@ -51,9 +51,9 @@ function processData(scheduleData, measurementAppointments, users) {
 }
 
 function getWeekNumber(date) {
-    const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-    const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
-    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+    const start = new Date(date.getFullYear(), 0, 1);
+    const days = Math.floor((date - start) / (24 * 60 * 60 * 1000)) + 1;
+    return Math.ceil(days / 7);
 }
 
 function updateTrainerDropdown(trainers) {
@@ -115,7 +115,7 @@ function updateWeekDropdown(trainers, selectedTrainer) {
 function selectMostRecentWeek(trainers, selectedTrainer) {
     const trainerSchedule = trainers.get(selectedTrainer);
     if (trainerSchedule) {
-        const sortedWeeks = Array.from(trainerSchedule.keys()).sort((a, b) => b - a); 
+        const sortedWeeks = Array.from(trainerSchedule.keys()).sort((a, b) => b - a);
         const mostRecentWeek = sortedWeeks[0];
         document.getElementById('searchBox').value = mostRecentWeek;
         const schedule = filterByWeek(trainers, selectedTrainer, mostRecentWeek);
@@ -159,7 +159,7 @@ function generateScheduleHTML(schedule) {
                 if (appointment.isAvailable === 'Y') {
                     div.innerHTML = `Instructor: ${appointment.name}<br><div class="button-container"><div class="reservation-button add-class-button"><button onclick="openUserSelectionPopup(${appointment.id}, '${appointment.name}', '${appointment.startDate}')">Agendar cita</button></div></div>`;
                 } else {
-                    div.innerHTML = `Instructor: ${appointment.name}<br>Cliente: ${appointment.customer.customerName}<br><div class="button-container"><div class="reservation cancel-edit-button"><button value="${appointment.customer.id}" data-customername="${appointment.customer.customerName}" data-trainername="${appointment.name}" onclick="cancelAppointment(${appointment.id}, '${appointment.customer.customerName}', '${appointment.name}', ${appointment.trainerScheduleId})">Cancelar</button></div></div>`;
+                    div.innerHTML = `Instructor: ${appointment.name}<br>Cliente: ${appointment.customer.customerName}<br><div class="button-container"><div class="login cancel-edit-button"><button value="${appointment.customer.id}" data-customername="${appointment.customer.customerName}" data-trainername="${appointment.name}" data-trainerscheduleid="${appointment.trainerScheduleId}" onclick="cancelAppointment(${appointment.customer.id}, '${appointment.customer.customerName}', '${appointment.name}', ${appointment.trainerScheduleId}, ${appointment.id})">Cancelar</button></div></div>`;
                 }
             }
 
@@ -187,63 +187,90 @@ function formatHour(date) {
     const minutes = date.getMinutes();
     const ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
-    hours = hours ? hours : 12; 
+    hours = hours ? hours : 12;
     const minutesStr = minutes < 10 ? '0' + minutes : minutes;
     return `${hours}:${minutesStr} ${ampm}`;
 }
 
 async function openUserSelectionPopup(scheduleId, trainerName, appointmentDate) {
     const popup = document.getElementById('userSelectionPopup');
-    const userListContainer = document.getElementById('userListContainer');
-    userListContainer.innerHTML = ''; 
+    const userSelect = document.getElementById('userSelect');
+    userSelect.innerHTML = '';
 
     usersList.forEach(user => {
-        const userDiv = document.createElement('div');
-        userDiv.textContent = user.name;
-        userDiv.className = 'user-selection';
-        userDiv.onclick = async () => {
-            const requestBody = {
-                id: 0,
-                creationDate: new Date().toISOString(),
-                userId: user.id,
-                customerName: user.name,
-                trainerName: trainerName,
-                trainerScheduleId: scheduleId,
-                appointmentDate: appointmentDate,
-                appointmentStatus: 'Pendiente'
-            };
-            const response = await CreateMeasurementAppointment(requestBody);
-            if (response) {
-                alert('Cita agendada con éxito');
-                popup.style.display = 'none';
-                window.location.reload(); 
-            } else {
-                alert('Error al agendar cita');
-            }
-        };
-        userListContainer.appendChild(userDiv);
+        const option = document.createElement('option');
+        option.value = user.id;
+        option.textContent = user.name;
+        userSelect.appendChild(option);
     });
+
+    document.getElementById('createAppointment').onclick = async () => {
+        const selectedUserId = userSelect.value;
+        const selectedUser = usersList.find(user => user.id == selectedUserId);
+        const requestBody = {
+            id: 0,
+            creationDate: new Date().toISOString(),
+            userId: selectedUser.id,
+            customerName: selectedUser.name,
+            trainerName: trainerName,
+            trainerScheduleId: scheduleId,
+            appointmentDate: appointmentDate,
+            appointmentStatus: 'Pendiente'
+        };
+        const response = await CreateMeasurementAppointment(requestBody);
+        if (response) {
+            alert('Cita agendada con éxito');
+            popup.style.display = 'none';
+            window.location.reload();
+        } else {
+            alert('Error al agendar cita');
+        }
+    };
+
+    document.getElementById('closePopup').onclick = () => {
+        popup.style.display = 'none';
+    };
 
     popup.style.display = 'block';
 }
 
-async function cancelAppointment(scheduleId, customerName, trainerName, trainerScheduleId) {
+async function cancelAppointment(userId, customerName, trainerName, trainerScheduleId, appointmentId) {
+
+    const measurementAppointments = await RetrieveMeasurementAppointments();
+
+
+    const user = usersList.find(user => user.name === customerName);
+    const actualUserId = user.id;
+
+    const appointmentToCancel = measurementAppointments.find(appointment =>
+        appointment.trainerScheduleId === appointmentId 
+    );
+
+    if (!appointmentToCancel) {
+        alert('No se encontró la cita para cancelar');
+        return;
+    }
+
+
+
     const requestBody = {
-        id: scheduleId,
+        id: appointmentToCancel.id,  
         creationDate: new Date().toISOString(),
-        userId: 0,  
-        customerName: customerName,
+        userId: actualUserId,
         trainerName: trainerName,
-        trainerScheduleId: trainerScheduleId,
-        appointmentDate: new Date().toISOString(),
-        appointmentStatus: 'Cancelado'
+        customerName: customerName,
+        appointmentStatus: "Cancelado",
+        trainerScheduleId: appointmentId
     };
+
+    console.log(requestBody); 
 
     try {
         const response = await UpdateMeasurementAppointment(requestBody);
+        console.log("this", response)
         if (response) {
             alert('Cita cancelada con éxito');
-            window.location.reload(); 
+            window.location.reload();
         } else {
             alert('Error al cancelar cita');
         }
@@ -252,3 +279,4 @@ async function cancelAppointment(scheduleId, customerName, trainerName, trainerS
         alert('Error al cancelar cita');
     }
 }
+

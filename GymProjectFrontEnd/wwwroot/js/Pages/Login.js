@@ -224,7 +224,7 @@ $(document).ready(function () {
                         <div class="Reservation login"> 
                             <button id="confirm-recovery">Confirmar</button>
                         </div>
-                        <div class="CheckSchedule forget-password"> 
+                        <div class="CheckSchedule forget-password id="forget-button"> 
                             <button id="cancel-recovery">Cancelar</button>
                         </div>
                     </div>

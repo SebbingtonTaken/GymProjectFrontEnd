@@ -1,4 +1,4 @@
-﻿@page
+﻿﻿@page
 @model GymProjectFrontEnd.Pages.ExerciseModel
 @{
 }
@@ -7,11 +7,10 @@
 
     <link rel="preload" href="~/css/style.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
-    <link rel="preload" href="~/css/Login.css" asp-append-version="true">
-    <link rel="stylesheet" href="~/css/Login.css" asp-append-version="true">
     <link rel="preload" href="~/css/Equipment.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/Equipment.css" asp-append-version="true">
     <link rel="preload" href="~/css/Exercise.css" asp-append-version="true">
+
     <link rel="stylesheet" href="~/css/Exercise.css" asp-append-version="true">
     <script src="~/js/Pages/Exercise.js" type="module"> </script>
 </head>
@@ -76,9 +75,6 @@
                         <div class="form-group">
                             <select id="slcEquipment">
                                 <option value="">Equipo: Selecciona el equipo</option>
-                                <option value="27">Area Libre</option>
-                                <option value="28">Polea</option>
-                                <option value="26">Cuerda de saltar</option>
                             </select>
                             <div class="error" id="area-error"></div>
                         </div>
@@ -86,9 +82,9 @@
 
                 </div>
                 <div class="form-button-container">
-                    <button onclick="" id="btnCreate" type="button">Crear</button>
-                    <button id="btnUpdate" type="button">Modificar</button>
-                    <button id="reset-button" type="button" onclick="resetForm()">Cancelar</button>
+                    <button onclick=""  class= "sendButton"id="btnCreate" type="button">Crear</button>
+                    <button class="sendButton" id="btnUpdate" type="button">Modificar</button>
+                    <button class="sendButton" id="reset-button" type="button" onclick="resetForm()">Cancelar</button>
                 </div>
             </form>
         </div>

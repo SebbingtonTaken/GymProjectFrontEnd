@@ -60,6 +60,20 @@ export async function RetrieveTrainerSchedule() {
     }
 }
 
+export async function RetrieveAllEmployees() {
+    let controlAction = new ControlActions();
+    const apiBaseEndPoint = "User";
+    const endPointRoute = `${apiBaseEndPoint}/RetrieveAllEmployees`;
+
+    try {
+        const employees = await controlAction.GetToApi(endPointRoute);
+        return employees;
+    } catch (error) {
+        console.error("Failed to schedules:", error);
+        return null;
+    }
+}
+
 export async function RetrieveMeasurementAppointments() {
     let controlAction = new ControlActions();
     const apiBaseEndPoint = "MeasurementAppointments";
