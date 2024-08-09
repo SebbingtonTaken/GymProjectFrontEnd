@@ -1,0 +1,30 @@
+﻿.dataTables_length {
+    float: left;
+    color: var(--formBackGround) !important;
+}
+
+.dataTables_length > label > select >option{
+   background-color:transparent ;
+}
+
+.dataTables_filter {
+    float: right;
+    text-align: right;
+    color: var(--formBackGround) !important;
+}
+
+.dataTable{
+    width:100% !important;
+}
+.dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: .25em;
+}
+.paginate_button {
+    padding: .3em 0.5em !important;
+}
+
+.dataTables_info {
+    color: var(--formBackGround);
+}

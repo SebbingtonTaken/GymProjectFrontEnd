@@ -157,10 +157,9 @@ function ExercisesViewController() {
                 "dataSrc": ""
             },
             "columns": columns,
-            "paging": false,       // Disable pagination
-            "ordering": false,     // Disable column ordering
-            "info": false,         // Disable table information display
-            "searching": false     // Disable the search bar
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/2.1.3/i18n/es-MX.json"
+            }
         });
 
         $('#tblExercises tbody').on('click', 'tr', function () {
