@@ -1,4 +1,4 @@
-﻿export function ControlAction() {
+﻿ export function ControlAction() {
 	//Ruta base del API
 	this.URL_API = "https://localhost:7236/api/";
 
@@ -86,6 +86,13 @@
 		});
 	}
 
+	this.SweetAlert = function (title,text,type) {
+		return Swal.fire(
+			title,
+			text,
+			type
+		)
+	};
 	/* ACCIONES VIA AJAX, O ACCIONES ASINCRONAS*/
 	this.PostToAPI = function (service, data, callBackFunction) {
 		$.ajax({
@@ -97,8 +104,8 @@
 			success: function (data) {
 				if (callBackFunction) {
 					Swal.fire(
-						'Good job!',
-						'Transaction completed!',
+						'¡Bien hecho!',
+						'Transacción completada!',
 						'success'
 					)
 					callBackFunction(data);
@@ -114,9 +121,8 @@
 				}
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: 'Ups...',
 					html: message,
-					footer: 'UCenfotec'
 				})
 			}
 		});
@@ -125,12 +131,13 @@
 	this.PutToAPI = function (service, data, callBackFunction) {
 		$.put(this.GetUrlApiService(service), data)
 			.done(function (response) {
-				Swal.fire(
-					'Good job!',
-					'Transaction completed!',
-					'success'
-				);
+
 				if (callBackFunction) {
+					Swal.fire(
+						'¡Bien hecho!',
+						'Transacción completada!',
+						'success'
+					)
 					callBackFunction(response);
 				}
 			})
@@ -141,9 +148,8 @@
 				var message = errorMessages.join("<br/> ");
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: 'Ups...',
 					html: message,
-					footer: 'UCenfotec'
 				});
 			});
 	};

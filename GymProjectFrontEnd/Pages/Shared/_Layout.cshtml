@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="~/css/DataTables.css" asp-append-version="true" />
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="~/js/SweetAlert.js" type="module" asp-append-version="true"></script>
    
 
 
@@ -43,6 +45,7 @@
                             <a id="manage-equipment" asp-page="/EquipmentManagement">Gestión de equipo</a>
                             <a id="manage-appointments" asp-page="/MeasurementAppointment">Gestión de citas de medición</a>
                             <a id="manage-appointments" asp-page="/Measures">Gestión de medidas</a>
+                            <a id="manage-appointments" asp-page="/CouponsManagement">Gestión de cupones</a>
 
 
                         </div>
@@ -88,7 +91,7 @@
             @RenderBody()
 
 
-
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
 

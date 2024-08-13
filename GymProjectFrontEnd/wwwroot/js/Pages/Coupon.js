@@ -1,7 +1,7 @@
 ﻿//JS que maneja comportamiento de la vista Users.cshtml
 
 //Definimos la clase
-
+import { ControlAction } from '../ControlAction.js';
 function CouponsViewController() {
     this.ViewName = "Coupons";
     this.ApiBaseEndPoint = "Coupon";
@@ -25,6 +25,10 @@ function CouponsViewController() {
             var vc = new CouponsViewController();
             vc.Delete();
         });
+        $("#reset-button").click((event) => {
+            event.preventDefault();
+            this.ResetForm();
+        });
 
         //carga de la tabla
 
@@ -33,7 +37,7 @@ function CouponsViewController() {
 
     //Metodo de creacion de usuarios
 
-    this.Create = function () {
+    this.Create = async function () {
 
 
         //Crear el DTO de user
@@ -49,11 +53,19 @@ function CouponsViewController() {
         coupon.couponCode = "";
         coupon.state = $("#slcState").val();
         let quantity = $("#txtQuantity").val();
+
+        if (!(await this.ValidateCouponCreate(coupon))) {
+            return; // Stop execution if validation fails
+        }
         var ca = new ControlAction();
 
         var endPointRoute = this.ApiBaseEndPoint + "/Create";
-        for (i = 0; i < quantity; i++) {
+        for (let i = 0; i < quantity; i++) {
             ca.PostToAPI(endPointRoute, coupon, function () {
+                ca.SweetAlert('Accion completada', 'Cupon Creado', 'success').then(() => {
+                    // Refresh the page
+                    location.reload();
+                });
                 console.log("Coupon/s created");
             });
 
@@ -61,7 +73,81 @@ function CouponsViewController() {
 
 
     }
-    this.Update = function () {
+    this.ValidateCouponCreate = function (coupon) {
+        var ca = new ControlAction();
+
+        // Create a promise to handle the asynchronous nature of SweetAlert
+        return new Promise((resolve) => {
+            if (coupon.discountPercentage == 0 || coupon.discountPercentage == null || coupon.discountPercentage === undefined) {
+                ca.SweetAlert('Error', 'Debe incluir el porcentaje del descuento', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (coupon.expiryDate == "" || coupon.expiryDate == null || coupon.expiryDate === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar  fecha de expiración', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (coupon.state == "" || coupon.state == null || coupon.state === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun estado de la tabla ', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (coupon.userCategory == "" || coupon.userCategory == null || coupon.userCategory === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar alguna categoria de usuario de la tabla ', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+
+            // If all validations pass, resolve the promise with true
+            resolve(true);
+        });
+    };
+    this.ValidateCouponUpdate = function (coupon) {
+        var ca = new ControlAction();
+
+        // Create a promise to handle the asynchronous nature of SweetAlert
+        return new Promise((resolve) => {
+            if (coupon.discountPercentage == 0 || coupon.discountPercentage == null || coupon.discountPercentage === undefined) {
+                ca.SweetAlert('Error', 'Debe incluir el porcentaje del descuento', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (coupon.couponCode == "" || coupon.couponCode == null || coupon.couponCode === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun cupón de la tabla', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (coupon.expiryDate == "" || coupon.expiryDate == null || coupon.expiryDate === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar  fecha de expiración', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (coupon.state == "" || coupon.state == null || coupon.state === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun estado de la tabla ', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (coupon.userCategory == "" || coupon.userCategory == null || coupon.userCategory === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar alguna categoria de usuario de la tabla ', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+
+            // If all validations pass, resolve the promise with true
+            resolve(true);
+        });
+    };
+    this.Update = async function () {
 
         var coupon = {};
         coupon.discountPercentage = $("#txtPercent").val();
@@ -73,12 +159,21 @@ function CouponsViewController() {
         coupon.couponCode = $("#txtCode").val();
         coupon.state = $("#slcState").val();
 
+
+        if (!(await this.ValidateCouponUpdate(coupon))) {
+            return; // Stop execution if validation fails
+        }
+
         var ca = new ControlAction();
 
         var endPointRoute = this.ApiBaseEndPoint + "/Update";
 
         ca.PutToAPI(endPointRoute, coupon, function () {
-            console.log("Coupon Updated");
+
+            ca.SweetAlert('Accion completada', 'Cupon Actualizado', 'success').then(() => {
+                // Refresh the page
+                location.reload();
+            });
         });
     }
 
@@ -97,6 +192,14 @@ function CouponsViewController() {
         ca.DeleteToAPI(endPointRoute, product, function () {
             console.log("Product Deleted");
         });
+    }
+    this.ResetForm = function () {
+        $("#txtCode").val('');
+        $("#txtFin").val('');
+        $("#slcDestinataries").val('');
+        $("#slcState").val('');
+        $("#txtQuantity").val('');
+
     }
     this.LoadTable = function () {
         var ca = new ControlAction();
@@ -119,13 +222,17 @@ function CouponsViewController() {
         columns[2] = { 'data': 'userCategory' };
         columns[3] = { 'data': 'expiryDate' };
         columns[4] = { 'data': 'state' };
+        columns[5] = { 'data': 'creationDate' }
 
         $('#tblCoupons').dataTable({
             "ajax": {
                 "url": urlService,
                 "dataSrc": ""
             },
-            columns: columns
+            "columns": columns,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/2.1.3/i18n/es-MX.json"
+            }
         });
 
         $('#tblCoupons tbody').on('click', 'tr', function () {
@@ -142,6 +249,7 @@ function CouponsViewController() {
 
             //Mapeo de valores del DTO al formulario.
             $('#txtCode').val(DTO.couponCode);
+            $('#slcDestinataries').val(DTO.userCategory).change();
             $('#txtPercent').val(DTO.discountPercentage);
 
             var onlyDate = DTO.expiryDate.split("T");
@@ -149,6 +257,7 @@ function CouponsViewController() {
             $('#slcState').val(DTO.state).change();
         });
     }
+
 }
 
 

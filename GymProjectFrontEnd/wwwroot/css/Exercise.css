@@ -163,7 +163,8 @@ main {
     flex-direction: column;
 }
 
-.first-row, .second-row {
+
+.second-row {
     display: flex;
     justify-content: space-around;
 }

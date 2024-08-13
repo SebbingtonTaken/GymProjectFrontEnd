@@ -26,5 +26,5 @@
 }
 
 .dataTables_info {
-    color: var(--formBackGround);
+    color: var(--formBackGround) !important;
 }

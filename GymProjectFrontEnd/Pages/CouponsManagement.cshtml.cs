@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GymProjectFrontEnd.Pages
 {
-    public class CouponAndDiscountModel : PageModel
+    public class CouponsManagementModel : PageModel
     {
         public void OnGet()
         {

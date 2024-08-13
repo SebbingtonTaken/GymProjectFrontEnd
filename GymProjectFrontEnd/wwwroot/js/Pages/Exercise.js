@@ -33,7 +33,7 @@ function ExercisesViewController() {
 
     //Metodo de creacion de usuarios
 
-    this.Create = function () {
+    this.Create = async function () {
 
 
         //Crear el DTO de user
@@ -48,19 +48,89 @@ function ExercisesViewController() {
         exercise.assignedEquipment.Id = $("#slcEquipment").val();
         exercise.assignedEquipment.equipmentName = "";
 
-
+        if (!(await this.ValidateExerciseCreate(exercise))) {
+            return; // Stop execution if validation fails
+        }
         var ca = new ControlAction();
 
         var endPointRoute = this.ApiBaseEndPoint + "/Create";
 
+
         ca.PostToAPI(endPointRoute, exercise, function () {
             console.log("exercise/s created");
+            ca.SweetAlert('Accion completada', 'Ejercicio Creado', 'success').then(() => {
+                // Refresh the page
+                location.reload();
+            });
         });
 
 
 
-    }
-    this.Update = function () {
+    };
+
+    this.ValidateExerciseCreate =function(exercise){
+        var ca = new ControlAction();
+
+        // Create a promise to handle the asynchronous nature of SweetAlert
+        return new Promise((resolve) => {
+            if (exercise.exerciseName == "" || exercise.exerciseName == null || exercise.exerciseName === undefined) {
+                ca.SweetAlert('Error', 'Debe incluir el nombre del ejercicio', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (exercise.exerciseType == "" || exercise.exerciseType == null || exercise.exerciseType === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun tipo', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (exercise.assignedEquipment.Id == 0 || exercise.assignedEquipment.Id == null || exercise.assignedEquipment.Id === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun equipo', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+
+            // If all validations pass, resolve the promise with true
+            resolve(true);
+        });
+    };
+    this.ValidateExercise = function (exercise) {
+        var ca = new ControlAction();
+
+        // Create a promise to handle the asynchronous nature of SweetAlert
+        return new Promise((resolve) => {
+            if (exercise.exerciseName == "" || exercise.exerciseName == null || exercise.exerciseName === undefined) {
+                ca.SweetAlert('Error', 'Debe incluir el nombre del ejercicio', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (exercise.id == 0 || exercise.id == null || exercise.id === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun ejercicio de la tabla', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (exercise.exerciseType == "" || exercise.exerciseType == null || exercise.exerciseType === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun tipo', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+            if (exercise.assignedEquipment.Id == 0 || exercise.assignedEquipment.Id == null || exercise.assignedEquipment.Id === undefined) {
+                ca.SweetAlert('Error', 'Debe seleccionar algun equipo', 'error').then(() => {
+                    resolve(false); // Resolve promise with false indicating validation failure
+                });
+                return; // Exit function to prevent further code execution
+            }
+
+            // If all validations pass, resolve the promise with true
+            resolve(true);
+        });
+    };
+    this.Update = async function () {
 
 
         var exercise = {};
@@ -73,13 +143,20 @@ function ExercisesViewController() {
         exercise.assignedEquipment.Id = $("#slcEquipment").val();
         exercise.assignedEquipment.equipmentName = "";
 
-
+        if (!(await this.ValidateExercise(exercise))) {
+            return; // Stop execution if validation fails
+        }
+;
         var ca = new ControlAction();
 
         var endPointRoute = this.ApiBaseEndPoint + "/Update";
 
         ca.PutToAPI(endPointRoute, exercise, function () {
             console.log("exercise/s created");
+            ca.SweetAlert('Accion completada', 'Ejercicio Actualizado', 'success').then(() => {
+                // Refresh the page
+                location.reload();
+            });
         });
 
     }
