@@ -363,3 +363,13 @@ h1 {
 #forget-button {
     padding:2.3%;
 }
+
+.label-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+    .label-row > label {
+        width: 30%;
+        color: var(--scheduleBackground);
+    }

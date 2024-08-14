@@ -2,3 +2,120 @@
 @model GymProjectFrontEnd.Pages.DiscountsManagementModel
 @{
 }
+
+<head>
+
+    <link rel="preload" href="~/css/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+
+    <link rel="stylesheet" href="~/css/Exercise.css" asp-append-version="true">
+    <link rel="preload" href="~/css/Equipment.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Equipment.css" asp-append-version="true">
+    <link rel="preload" href="~/css/Exercise.css" asp-append-version="true">
+
+    <script src="~/js/Pages/Discounts.js" type="module"> </script>
+</head>
+
+<body>
+
+    </div>
+    <H1>Gestion de Descuentos</H1>
+    <p>Registra o modifica descuentos facilmente.</p>
+    </div>
+
+
+    </header>
+
+    <section class="permissions-management">
+        <div class="container permission-container">
+            <h2>
+                Configuración de Descuentos</h1>
+                <table id="tblDiscounts">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Porcentaje</th>
+                            <th>Categoría de Usuario</th>
+                            <th>Fecha de inicio</th>
+                            <th>Fecha de expiración</th>
+                            <th>Estado</th>
+                            <th>Fecha de creación</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+        </div>
+    </section>
+
+
+    <main>
+        <div class="form-container">
+            <h2>Registro de descuentos</h2>
+            <p>Ingresa los datos del descuento</p>
+            <form id="registration-form">
+                <div class="form-div">
+                    <div class="label-row">
+                        <label for="txtStart"> </label>
+                        <label for="txtStart">Fecha de inicio</label>
+                        <label for="txtStart">Fecha de expiración</label>
+                    </div>
+                    <div class="first-row">
+                        <div class="form-group">
+                            <input class="login-input" type="number" id="txtPercent" placeholder="Porcentaje">
+
+                            <input class="login-input" type="text" id="txtId" placeholder="Id" readonly="readonly" style="display:none">
+
+                        </div>
+                     
+                        <div class="form-group">
+                            
+                            <input class="login-input" type="date" id="txtStart" placeholder="Inicio">
+                            <div class="error" id="name-error"></div>
+                        </div>
+                     
+                        <div class="form-group">
+                
+                            <input class="login-input" type="date" id="txtFin" placeholder="Expiración">
+                            <div class="error" id="name-error"></div>
+                        </div>
+
+                    </div>
+                    <div class="second-row">
+
+                        <div class="form-group">
+                            <select id="slcDestinataries">
+                                <option value="">Categoría: Destinatarios</option>
+                                <option value="Activos">Activos</option>
+                                <option value="Nuevos">Nuevos</option>
+                                <option value="Inactivos">Inactivos</option>
+                            </select>
+                            <div class="error" id="area-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <select id="slcState">
+                                <option value="">Estado: Selecciona el estado</option>
+                                <option value="A"> A: Activo</option>
+                                <option value="I">I: Inactivo</option>
+                            </select>
+                            <div class="error" id="area-error"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-button-container">
+                    <button onclick="" class="sendButton" id="btnCreate" type="button">Crear</button>
+                    <button class="sendButton" id="btnUpdate" type="button">Modificar</button>
+                    <button class="sendButton" id="reset-button" type="button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>

@@ -8,6 +8,16 @@
     justify-self: end;
 }
 
+
+.label-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+    .label-row > label {
+        width: 30%;
+        color: var(--scheduleBackground);
+    }
 header {
     background-image: linear-gradient(var(--imageBackground), var(--imageBackground)), url('../Images/loginImage.jpg');
     background-size: cover;
