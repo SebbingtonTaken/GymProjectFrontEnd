@@ -1,5 +1,5 @@
 ﻿import { ControlActions } from '../ControlActions.js';
-
+import { ControlAction } from '../ControlAction.js';
 $(document).ready(function () {
 
     this.ViewName = "Login";
@@ -70,45 +70,196 @@ $(document).ready(function () {
         return isValid;
     };
 
-    const loadEmployees = () => {
+    //const loadEmployees = () => {
+    //    var endPointRoute = this.ApiBaseEndPoint + "/RetrieveAllEmployees";
+
+    //    this.controlAction.GetToApi(endPointRoute)
+    //        .then((data) => {
+    //            employees = data;
+    //            const tableBody = $('#employee-table tbody');
+    //            originalPermissions = {}; // Inicializar los permisos originales
+
+    //            tableBody.empty(); // Limpiar la tabla antes de llenarla de nuevo
+
+    //            employees.forEach(employee => {
+    //                // Guardar permisos originales
+    //                originalPermissions[employee.id] = employee.userPermissions.slice();
+
+    //                const userPermissions = employee.userPermissions;
+    //                let rowHtml = `<tr>
+    //                    <td>${employee.name} ${employee.lastName}</td>
+    //                    <td>${employee.employeeRole}</td>
+    //                    ${generatePermissionCells(employee.id, userPermissions)}
+    //                </tr>`;
+    //                tableBody.append(rowHtml);
+    //            });
+
+    //            populateEmployeeSelect(employees); // Llenar el select con los empleados
+    //        })
+    //        .catch(error => {
+    //            console.error('Error al cargar empleados:', error);
+    //        });
+    //};
+
+    //const generatePermissionCells = (employeeId, userPermissions) => {
+    //    const permissions = [10, 9, 11, 12, 13, 14, 21, 22];
+    //    let cellsHtml = '';
+    //    permissions.forEach(permission => {
+    //        const isChecked = userPermissions.includes(permission) ? 'checked' : '';
+    //        cellsHtml += `<td><input type="checkbox" name="employee-${employeeId}-permission-${permission}" value="${permission}" ${isChecked}></td>`;
+    //    });
+    //    return cellsHtml;
+    //};
+
+    //const loadEmployees = () => {
+    //    var ca = new ControlAction();
+    //    var endPointRoute = this.ApiBaseEndPoint + "/RetrieveAllEmployees";
+    //    var urlService = ca.GetUrlApiService(endPointRoute);
+    //    var columns = [
+    //        { 'data': 'name', 'render': (data, type, row) => `${row.name} ${row.lastName}` },
+    //        { 'data': 'employeeRole' },
+    //        {
+    //            'data': 'userPermissions',
+    //            'render': (data, type, row) => generatePermissionCells(row.id, data)
+    //        }
+    //    ];
+
+    //    $('#employee-table').DataTable({
+    //        "ajax": {
+    //            "url": urlService,
+    //            "dataSrc": ""// Adjust according to your data structure
+    //        },
+    //        "columns": columns,
+    //        "paging": true,   // Enable paging
+    //        "filter": true,   // Enable filtering
+    //        "language": {
+    //            "url": "//cdn.datatables.net/plug-ins/2.1.3/i18n/es-MX.json"
+    //        },
+    //        "destroy": true // Ensure that table is cleared and reloaded
+    //    });
+    //};
+
+    this.loadEmployees = async function() {
+        var ca = new ControlAction();
         var endPointRoute = this.ApiBaseEndPoint + "/RetrieveAllEmployees";
+        var urlService = ca.GetUrlApiService(endPointRoute);
 
-        this.controlAction.GetToApi(endPointRoute)
-            .then((data) => {
-                employees = data;
-                const tableBody = $('#employee-table tbody');
-                originalPermissions = {}; // Inicializar los permisos originales
+        await ca.GetToApi(endPointRoute, function (response   ) {
+            for (let i = 0; i < response.length; i++) {
+                employees.push(response[i]);
+            }
+            populateEmployeeSelect(employees); 
+        });
+        // Define columns for name, role, and each permission
+        var columns = [
+            { 'data': null, 'title': 'Employee Name', 'render': (data, type, row) => `${row.name} ${row.lastName}` },
+            { 'data': 'employeeRole', 'title': 'Role' }
+        ];
 
-                tableBody.empty(); // Limpiar la tabla antes de llenarla de nuevo
+        // Add a column for each permission
+        permissions.forEach(permission => {
+            columns.push({
+                'data': 'userPermissions',
 
-                employees.forEach(employee => {
-                    // Guardar permisos originales
-                    originalPermissions[employee.id] = employee.userPermissions.slice();
-
-                    const userPermissions = employee.userPermissions;
-                    let rowHtml = `<tr>
-                        <td>${employee.name} ${employee.lastName}</td>
-                        <td>${employee.employeeRole}</td>
-                        ${generatePermissionCells(employee.id, userPermissions)}
-                    </tr>`;
-                    tableBody.append(rowHtml);
-                });
-
-                populateEmployeeSelect(employees); // Llenar el select con los empleados
-            })
-            .catch(error => {
-                console.error('Error al cargar empleados:', error);
+                'render': (data, type, row) => {
+                    const isChecked = row.userPermissions.includes(permission);
+                    return `<input type="checkbox" data-employee-id="${row.id}" data-permission-id="${permission}" ${isChecked ? 'checked' : ''} />`;
+                }
             });
+        });
+
+        $('#employee-table').DataTable({
+            "ajax": {
+                "url": urlService,
+                "dataSrc": "",
+                "type": "GET",
+                "complete": function () {
+                    // Update the employee list after the table is fully populated
+                    updateEmployeeListFromTable();
+                }
+            },
+            "columns": columns,
+            "paging": true,
+            "filter": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/2.1.3/i18n/es-MX.json"
+            },
+            "destroy": true,
+            "drawCallback": function () {
+                // Update the employee list after each draw (e.g., pagination or filtering)
+                updateEmployeeListFromTable();
+            }
+        });
+   
+    }
+
+    const permissions = [10, 9, 11, 12, 13, 14, 21, 22]; // List of all possible permissions
+
+    const generatePermissionCells = (id, userPermissions) => {
+        let permissionCells = '';
+
+        permissions.forEach(permission => {
+            const isChecked = userPermissions.includes(permission);
+            permissionCells += `<td><input type="checkbox" data-employee-id="${id}" data-permission-id="${permission}" ${isChecked ? 'checked' : ''} /></td>`;
+        });
+
+        return permissionCells;
     };
 
-    const generatePermissionCells = (employeeId, userPermissions) => {
-        const permissions = [10, 9, 11, 12, 13, 14, 21, 22];
-        let cellsHtml = '';
-        permissions.forEach(permission => {
-            const isChecked = userPermissions.includes(permission) ? 'checked' : '';
-            cellsHtml += `<td><input type="checkbox" name="employee-${employeeId}-permission-${permission}" value="${permission}" ${isChecked}></td>`;
+    //$('#confirm-changes button').click(() => {
+    //    const updatedPermissions = [];
+    //    const permissionsForDelete = [];
+
+    //    $('#employee-table tbody tr').each(function () {
+    //        const employeeId = $(this).find('input[type="checkbox"]').first().attr('name').split('-')[1];
+    //        const currentPermissions = [];
+    //        const originalPermissions = employees.find(emp => emp.id == employeeId).userPermissions;
+
+    //        $(this).find('input[type="checkbox"]').each(function () {
+    //            if ($(this).is(':checked')) {
+    //                currentPermissions.push(parseInt($(this).val()));
+    //            }
+    //        });
+
+    //        const addedPermissions = currentPermissions.filter(p => !originalPermissions.includes(p));
+    //        const removedPermissions = originalPermissions.filter(p => !currentPermissions.includes(p));
+
+    //        if (addedPermissions.length > 0 || removedPermissions.length > 0) {
+    //            updatedPermissions.push({ employeeId, permissionIds: addedPermissions });
+    //            permissionsForDelete.push({ employeeId, permissionsForDelete: removedPermissions });
+    //        }
+    //    });
+
+    //    if (updatedPermissions.length > 0) {
+    //        updateEmployeePermissions(updatedPermissions, permissionsForDelete);
+    //    }
+    //});
+
+    const updateEmployeeListFromTable = () => {
+        const updatedEmployees = [];
+
+        $('#employee-table tbody tr').each(function () {
+            const employeeId = $(this).find('input[type="checkbox"]').first().data('employee-id');
+            if (!employeeId) return;
+
+            const currentPermissions = [];
+            $(this).find('input[type="checkbox"]').each(function () {
+                if ($(this).is(':checked')) {
+                    currentPermissions.push(parseInt($(this).data('permission-id')));
+                }
+            });
+
+            // Update the employees array
+            const employeeIndex = employees.findIndex(emp => emp.id == employeeId);
+            if (employeeIndex >= 0) {
+                employees[employeeIndex].userPermissions = currentPermissions;
+            } else {
+                // Optionally, handle the case where the employee is not found
+                console.error(`Employee with ID ${employeeId} not found in the employees list.`);
+            }
         });
-        return cellsHtml;
+
+        console.log('Updated employees list:', employees);
     };
 
     $('#confirm-changes button').click(() => {
@@ -116,13 +267,19 @@ $(document).ready(function () {
         const permissionsForDelete = [];
 
         $('#employee-table tbody tr').each(function () {
-            const employeeId = $(this).find('input[type="checkbox"]').first().attr('name').split('-')[1];
+            const employeeId = $(this).find('input[type="checkbox"]').first().data('employee-id');
+
+            if (!employeeId) {
+                console.error('Employee ID not found for this row.');
+                return;
+            }
+
             const currentPermissions = [];
             const originalPermissions = employees.find(emp => emp.id == employeeId).userPermissions;
 
             $(this).find('input[type="checkbox"]').each(function () {
                 if ($(this).is(':checked')) {
-                    currentPermissions.push(parseInt($(this).val()));
+                    currentPermissions.push(parseInt($(this).data('permission-id')));
                 }
             });
 
@@ -208,7 +365,7 @@ $(document).ready(function () {
         createEmployeeSchedule();
     });
 
-    loadEmployees();
+    this.loadEmployees();
     initializeTimeSelects();
 
     $('#send-button').on('click', (event) => {
